@@ -1,0 +1,3 @@
+[submodule "build-system/tulsi"]
+	path = build-system/tulsi
+	url = https://github.com/bazelbuild/tulsi
