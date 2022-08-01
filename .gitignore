@@ -89,6 +89,9 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-
 # Bazel
 build-input/
+bazel-bin/
+bazel-genfiles/
+bazel-out/
+bazel-testlogs/
