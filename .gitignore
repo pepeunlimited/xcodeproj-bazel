@@ -92,6 +92,11 @@ iOSInjectionProject/
 # Bazel
 build-input/
 bazel-bin/
+bazel-bin
 bazel-genfiles/
 bazel-out/
+bazel-out
 bazel-testlogs/
+bazel-testlogs
+bazel-xcodeproj-bazel
+bazel-xcodeproj-bazel/
