@@ -1,11 +1,11 @@
 indentation: 2
 excluded:
-- bazel-bin/*
-- bazel-out/*
-- bazel-testlogs/*
-- bazel-xcodeproj-bazel/*
-- bazel-build-input/*
-- bazel-system/*
+- bazel-bin
+- bazel-out
+- bazel-testlogs
+- bazel-xcodeproj-bazel
+- build-input
+- build-system
 - HelloWorld/iOS/Application.swift
 - HelloWorld/iOS/main.m
 disabled_rules:
