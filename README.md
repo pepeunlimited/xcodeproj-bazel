@@ -2,31 +2,22 @@ xcodeproj-bazel
 ---------------
 
 `
-$ sh build-system/generate-xcodeproj.sh \
---verbose \
---bazel /usr/local/bin/bazel \
---target HelloWorld/iOS:HelloWorld \
---outputfolder build-input/gen/project \
---create-tulsiproj HelloWorld.tulsiproj \
---workspaceroot ./ \
+$ sh build-system/generate-xcodeproj.sh \  
+--verbose \  
+--bazel /usr/local/bin/bazel \  
+--target HelloWorld/iOS:HelloWorld \  
+--outputfolder build-input/gen/project \  
+--create-tulsiproj HelloWorld.tulsiproj \  
+--workspaceroot ./ \  
 --build-options --disk_cache="$HOME/helloworld-bazel-cache"
 `
 
 `
-$ sh build-system/generate-xcodeproj.sh \
---verbose \
---genconfig build-input/gen/project/HelloWorld.tulsiproj:HelloWorld \
---bazel /usr/local/bin/bazel \
---outputfolder build-input/gen/project \
---no-open-xcode
-`
-
-`
-$ sh build-system/generate-xcodeproj.sh \
---verbose \
---genconfig build-input/gen/project/HelloWorld.tulsiproj:HelloWorld \
---bazel /usr/local/bin/bazel \
---outputfolder build-input/gen/project \
+$ sh build-system/generate-xcodeproj.sh \  
+--verbose \  
+--genconfig build-input/gen/project/HelloWorld.tulsiproj:HelloWorld \  
+--bazel /usr/local/bin/bazel \  
+--outputfolder build-input/gen/project \  
 --no-open-xcode
 `
 
