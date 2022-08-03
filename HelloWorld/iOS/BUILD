@@ -1,26 +1,39 @@
-load("@rules_cc//cc:defs.bzl", "objc_library")
-load("@build_bazel_rules_apple//apple:ios.bzl", "ios_application")
+load("@build_bazel_rules_apple//apple:ios.bzl",
+    "ios_application"
+)
+
+load("@build_bazel_rules_swift//swift:swift.bzl",
+    "swift_library",
+)
 
 objc_library(
-    name = "UrlGetClasses",
+    name = "Main",
     srcs = [
-        "UrlGet/AppDelegate.m",
-        "UrlGet/UrlGetViewController.m",
-        "UrlGet/main.m",
+        "main.m"
     ],
-    hdrs = glob(["UrlGet/*.h"]),
+)
+
+swift_library(
+   name = "Lib",
+   srcs = glob([
+    "Application.swift",
+    "SceneDelegate.swift",
+    "AppDelegate.swift",
+    ]),
+   visibility = ["//visibility:private"]
 )
 
 ios_application(
-    name = "HelloWorld",
-    bundle_id = "Google.UrlGet",
-    families = [
-        "iphone",
-        "ipad",
-    ],
-    infoplists = [":UrlGet/UrlGet-Info.plist"],
-    launch_storyboard = "UrlGet/UrlGetViewController.xib",
-    minimum_os_version = "8.0",
-    visibility = ["//visibility:public"],
-    deps = [":UrlGetClasses"],
+   name = "HelloWorld",
+   deps = [":Main", ":Lib"], 
+   bundle_id = "com.pepeunlimited.helloworld",
+   families = [
+       "iphone",
+       "ipad"
+   ],
+   infoplists = ["Info.plist"],
+   launch_storyboard = "LaunchScreen.storyboard",
+   resources = [],
+   minimum_os_version = "12.0",
+   visibility = ["//visibility:public"]
 )
