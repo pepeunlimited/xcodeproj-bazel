@@ -8,6 +8,10 @@ LaunchScreen.storyboard is required to be configured, otherwise UIScreen.main.bo
 Prerequisites
 -------------
 
+```
+$ git clone --recursive https://github.com/pepeunlimited/xcodeproj-bazel.git
+```
+
 Install bazelisk via homebrew  
 ```
 $ brew install bazelisk
