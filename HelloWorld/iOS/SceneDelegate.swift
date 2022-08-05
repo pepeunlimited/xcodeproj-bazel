@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import os
 
 @available(iOS 13.0, *)
 @objc(SceneDelegate) class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+  
   var window: UIWindow?
 
   func scene(_ scene: UIScene,
