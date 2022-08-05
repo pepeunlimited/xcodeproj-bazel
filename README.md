@@ -1,6 +1,8 @@
 xcodeproj-bazel
 ---------------
 
+If you do set launchscreen UIScreen.main.bounds and windowScene.coordinateSpace.bounds do
+not cover entair screen
 
 Prerequisites
 -------------
@@ -22,11 +24,11 @@ $ /usr/bin/xcodebuild -version
 
 Build and run [`Tulsi`](https://tulsi.bazel.build/)  
 ```
-sh $SRCROOT/xcodeproj-bazel/build-system/tulsi build_and_run.sh -x $XCODE_VERSION
+sh build-system/tulsi build_and_run.sh -x $XCODE_VERSION
 ```
 
 Getting started
--------------
+---------------
 
 Generate .tulsiproj  
 ```
@@ -52,23 +54,26 @@ $ sh build-system/generate-xcodeproj.sh \
 ```
 
 ```
+$ open $SRCROOT/xcodeproj-bazel/build-input/gen/project/HelloWorld.xcodeproj
+```
+
+Bazel
+-----
+
+Build  
+```
 $ bazel build //HelloWorld/iOS:HelloWorld
 ```
 
+Run  
 ```
 $ bazel run //HelloWorld/iOS:HelloWorld
 ```
 
-```
-$ open $SRCROOT/xcodeproj-bazel/build-input/gen/project/HelloWorld.xcodeproj
-```
-
+Clean  
 ```
 $ bazel clean --expunge
 ```
-
-If you do set launchscreen UIScreen.main.bounds and windowScene.coordinateSpace.bounds do
-not cover entair screen
 
 License
 -------
