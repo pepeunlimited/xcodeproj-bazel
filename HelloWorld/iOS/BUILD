@@ -26,6 +26,14 @@ objc_library(
     ],
 )
 
+swift_library(
+    name = "MainSwift",
+    srcs = glob([
+        "Application.swift",
+    ]),
+    visibility = ["//visibility:private"]
+)
+
 # REQUIRED
 # Define iOS .swift files
 #
@@ -34,9 +42,9 @@ objc_library(
 swift_library(
     name = "Lib",
     srcs = glob([
-        "Application.swift",
         "SceneDelegate.swift",
         "AppDelegate.swift",
+        "OSLog+extension.swift",
     ]),
     visibility = ["//visibility:public"]
 )
@@ -48,7 +56,7 @@ swift_library(
 # it causes bug for frame.size for application
 ios_application(
     name = "HelloWorld",
-    deps = [":Main", ":Lib"], 
+    deps = [":Main", ":MainSwift", ":Lib"],
     bundle_id = "com.pepeunlimited.helloworld",
     families = [
         "iphone",

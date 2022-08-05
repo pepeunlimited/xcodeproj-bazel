@@ -11,4 +11,9 @@ import os
 
 extension OSLog {
 
+  private static var subsystem: String = Bundle.main.bundleIdentifier!
+
+  static let app: OSLog = OSLog(subsystem: subsystem, category: "app")
+
+  static let scene: OSLog = OSLog(subsystem: subsystem, category: "scene")
 }
