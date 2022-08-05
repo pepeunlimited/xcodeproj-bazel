@@ -11,7 +11,7 @@ $ brew install bazelisk
 ```
 
 Check that you have installed and configured xcodebuild. If you're not download,
-(`Xcode`)[https://xcodereleases.com]  
+[`Xcode`](https://xcodereleases.com)  
 
 Open the Xcode after installation at least once because it executes configures for macOS
 and licence agreements during first launch.  
