@@ -10,7 +10,7 @@ Install bazelisk via homebrew
 $ brew install bazelisk
 ```
 
-Check that you have installed and configured xcodebuild. If you're not download,
+Check that you have installed and configured xcodebuild. If you're not download
 [`Xcode`](https://xcodereleases.com)  
 
 Open the Xcode after installation at least once because it executes configures for macOS
@@ -20,7 +20,7 @@ and licence agreements during first launch.
 $ /usr/bin/xcodebuild -version
 ```
 
-Build and run tulsi for .xcodeproj  
+Build and run tulsi  
 ```
 sh $SRCROOT/xcodeproj-bazel/build-system/tulsi build_and_run.sh -x $XCODE_VERSION
 ```
