@@ -1,7 +1,7 @@
 xcodeproj-bazel
 ---------------
 
-Minimal setup for xcodeproj with the [`bazel build system`](https://bazel.build/)  
+Minimal setup for `.xcodeproj` with the [`bazel build system`](https://bazel.build/)  
 
 LaunchScreen.storyboard is required to be configured, otherwise UIScreen.main.bounds and windowScene.coordinateSpace.bounds causes misbehavior for application.  
 
@@ -35,7 +35,7 @@ $ sh build-system/tulsi build_and_run.sh -x $XCODE_VERSION
 Getting started
 ---------------
 
-Generate .tulsiproj  
+Generate `.tulsiproj`  
 ```
 $ sh build-system/generate-xcodeproj.sh \
 --verbose \
@@ -48,7 +48,7 @@ $ sh build-system/generate-xcodeproj.sh \
 --build-options --disk_cache="$HOME/helloworld-bazel-cache"
 ```
 
-Generate .xcodeproj  
+Generate `.xcodeproj`  
 ```
 $ sh build-system/generate-xcodeproj.sh \
 --verbose \
@@ -58,6 +58,7 @@ $ sh build-system/generate-xcodeproj.sh \
 --no-open-xcode
 ```
 
+Open the `Xcode`
 ```
 $ open $SRCROOT/xcodeproj-bazel/build-input/gen/project/HelloWorld.xcodeproj
 ```
