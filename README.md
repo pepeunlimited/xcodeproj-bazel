@@ -3,7 +3,7 @@ xcodeproj-bazel
 
 Minimal setup for `.xcodeproj` with the [`bazel build system`](https://bazel.build/)  
 
-LaunchScreen.storyboard is required to be configured, otherwise UIScreen.main.bounds and windowScene.coordinateSpace.bounds causes misbehavior for application.  
+`LaunchScreen.storyboard` is required to be configured, otherwise `UIScreen.main.bounds` and `windowScene.coordinateSpace.bounds` causes misbehavior for application.  
 
 Prerequisites
 -------------
