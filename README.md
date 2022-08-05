@@ -20,7 +20,7 @@ and licence agreements during first launch.
 $ /usr/bin/xcodebuild -version
 ```
 
-Build and run tulsi  
+Build and run [`Tulsi`](https://tulsi.bazel.build/)  
 ```
 sh $SRCROOT/xcodeproj-bazel/build-system/tulsi build_and_run.sh -x $XCODE_VERSION
 ```
