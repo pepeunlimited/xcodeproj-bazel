@@ -1,8 +1,9 @@
 xcodeproj-bazel
 ---------------
 
-If you do set launchscreen UIScreen.main.bounds and windowScene.coordinateSpace.bounds do
-not cover entair screen
+Minimal setup for xcodeproj with the [`bazel build system`](https://bazel.build/)  
+
+LaunchScreen.storyboard is required to be configured, otherwise UIScreen.main.bounds and windowScene.coordinateSpace.bounds causes misbehavior for application.  
 
 Prerequisites
 -------------
@@ -24,7 +25,7 @@ $ /usr/bin/xcodebuild -version
 
 Build and run [`Tulsi`](https://tulsi.bazel.build/)  
 ```
-sh build-system/tulsi build_and_run.sh -x $XCODE_VERSION
+$ sh build-system/tulsi build_and_run.sh -x $XCODE_VERSION
 ```
 
 Getting started
