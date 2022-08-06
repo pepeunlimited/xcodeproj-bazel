@@ -11,6 +11,7 @@
 int main(int argc, char *argv[]) {
     @autoreleasepool {
       // Do nothing else than open the AppDelegate
+      // @see https://developer.apple.com/documentation/uikit/1622933-uiapplicationmain?language=objc
       return UIApplicationMain(argc, argv, @"Application", @"AppDelegate");
     }
 }

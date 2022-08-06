@@ -68,6 +68,7 @@ Documentation & Links
 [`bazelbuild/rules_swift`](https://github.com/bazelbuild/rules_swift/tree/master/doc)  
 [`bazelbuild/apple_support`](https://github.com/bazelbuild/apple_support/tree/master/doc)  
 [`bazelbuild/bazel-skylib`](https://github.com/bazelbuild/bazel-skylib/tree/main/docs)  
+[`bazel.build/command-line-reference`](https://bazel.build/reference/command-line-reference)  
 <br/>
 [`Bazel Tutorial: Build an iOS App`](https://bazel.build/tutorials/ios-app)  
 [`Migrating from Xcode to Bazel`](https://bazel.build/migrate/xcode)  
