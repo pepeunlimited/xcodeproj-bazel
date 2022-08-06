@@ -73,6 +73,8 @@ Documentation & Links
 [`Migrating from Xcode to Bazel`](https://bazel.build/migrate/xcode)  
 [`Building with Bazel`](https://www.raywenderlich.com/31558158-building-with-bazel/)  
 [`ios_and_bazel_at_reddit_a_journey`](https://www.reddit.com/r/RedditEng/comments/syz5dw/ios_and_bazel_at_reddit_a_journey/)  
+[`migrating-ios-project-to-bazel-a-real-world-experience`](https://liuliu.me/eyes/migrating-ios-project-to-bazel-a-real-world-experience/)  
+
 
 
 iOS
