@@ -21,7 +21,7 @@ import os
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     if #available(iOS 13.0, *) {
       // @see more at SceneDelegate.swift
-      os_log(">> prevented didFinishLaunchingWithOptions > 13.0", log: OSLog.app, type: .debug)
+      os_log(">> skip didFinishLaunchingWithOptions function, iOS version is greater than 13.0", log: OSLog.app, type: .debug)
     } else {
       os_log(">> didFinishLaunchingWithOptions", log: OSLog.app, type: .debug)
       window = UIWindow(frame: UIScreen.main.bounds)

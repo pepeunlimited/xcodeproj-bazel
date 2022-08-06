@@ -61,6 +61,15 @@ Open the `Xcode`
 $ open $SRCROOT/xcodeproj-bazel/build-input/gen/project/HelloWorld.xcodeproj
 ```
 
+Documentation
+-------------
+
+[`bazelbuild/rules_apple`](https://github.com/bazelbuild/rules_apple/tree/master/doc)  
+[`bazelbuild/rules_swift`](https://github.com/bazelbuild/rules_swift/tree/master/doc)  
+[`bazelbuild/apple_support`](https://github.com/bazelbuild/apple_support/tree/master/doc)  
+[`bazelbuild/bazel-skylib`](https://github.com/bazelbuild/bazel-skylib/tree/main/docs)  
+
+
 iOS
 ---
 
