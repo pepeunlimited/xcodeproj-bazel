@@ -1,4 +1,4 @@
-xcodeproj-bazel
+axcodeproj-bazel
 ---------------
 
 Minimal setup for `.xcodeproj` with the [`bazel build system`](https://bazel.build/)  
@@ -61,13 +61,18 @@ Open the `Xcode`
 $ open $SRCROOT/xcodeproj-bazel/build-input/gen/project/HelloWorld.xcodeproj
 ```
 
-Documentation
+Documentation & Links
 -------------
 
 [`bazelbuild/rules_apple`](https://github.com/bazelbuild/rules_apple/tree/master/doc)  
 [`bazelbuild/rules_swift`](https://github.com/bazelbuild/rules_swift/tree/master/doc)  
 [`bazelbuild/apple_support`](https://github.com/bazelbuild/apple_support/tree/master/doc)  
 [`bazelbuild/bazel-skylib`](https://github.com/bazelbuild/bazel-skylib/tree/main/docs)  
+<br/>
+[`Bazel Tutorial: Build an iOS App`](https://bazel.build/tutorials/ios-app)  
+[`Migrating from Xcode to Bazel`](https://bazel.build/migrate/xcode)  
+[`Building with Bazel`](https://www.raywenderlich.com/31558158-building-with-bazel/)  
+[`ios_and_bazel_at_reddit_a_journey`](https://www.reddit.com/r/RedditEng/comments/syz5dw/ios_and_bazel_at_reddit_a_journey/)  
 
 
 iOS
