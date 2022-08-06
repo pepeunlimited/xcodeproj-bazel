@@ -1,4 +1,4 @@
-axcodeproj-bazel
+xcodeproj-bazel
 ---------------
 
 Minimal setup for `.xcodeproj` with the [`bazel build system`](https://bazel.build/)  
