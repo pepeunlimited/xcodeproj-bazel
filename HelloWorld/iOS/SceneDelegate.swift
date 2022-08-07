@@ -18,7 +18,17 @@ import os
              willConnectTo session: UISceneSession,
              options connectionOptions: UIScene.ConnectionOptions) {
     guard let windowScene = scene as? UIWindowScene else { return }
+
+
+    let osActivityDTMode: String? = ProcessInfo.processInfo.environment["OS_ACTIVITY_DT_MODE"] as String?
+    let variable1: String? = ProcessInfo.processInfo.environment["VARIABLE_1"] as String?
+    let variable2: String? = ProcessInfo.processInfo.environment["VARIABLE_2"] as String?
+
+
     os_log(">> willConnectTo session", log: OSLog.scene, type: .debug)
+    print(osActivityDTMode)
+    print(variable1)
+    print(variable2)
     window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     window?.windowScene = windowScene
     window?.rootViewController = UIViewController()

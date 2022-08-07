@@ -18,6 +18,12 @@ $ brew install bazelisk
 Check that you have installed and configured xcodebuild. If you're not download
 [`Xcode`](https://xcodereleases.com)  
 
+
+Install the Command Line Tools  
+```
+$ xcode-select --install
+```
+
 Open the Xcode after installation at least once because it executes configures for macOS
 and licence agreements during first launch.  
 
@@ -75,7 +81,7 @@ Documentation & Links
 [`Building with Bazel`](https://www.raywenderlich.com/31558158-building-with-bazel/)  
 [`ios_and_bazel_at_reddit_a_journey`](https://www.reddit.com/r/RedditEng/comments/syz5dw/ios_and_bazel_at_reddit_a_journey/)  
 [`migrating-ios-project-to-bazel-a-real-world-experience`](https://liuliu.me/eyes/migrating-ios-project-to-bazel-a-real-world-experience/)  
-
+[`google-mediapipe-examples-ios`](https://github.com/google/mediapipe/tree/master/mediapipe/examples/ios)  
 
 
 iOS
