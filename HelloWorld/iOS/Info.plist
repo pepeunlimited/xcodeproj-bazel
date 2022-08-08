@@ -9,13 +9,13 @@
 <key>CFBundleIdentifier</key>			inherited @ HelloWorld/iOS/BUILD bundle_id
 <key>CFBundleShortVersionString</key>	inherited @ HelloWorld/iOS/BUILD build_version
 <key>CFBundleVersion</key>				inherited @ HelloWorld/iOS/BUILD short_version_string
--->	
+-->
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>$(BUNDLE_NAME)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
