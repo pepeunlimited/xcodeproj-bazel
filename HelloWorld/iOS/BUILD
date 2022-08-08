@@ -68,7 +68,7 @@ helloworld_env = {
 
 # REQUIRED
 apple_bundle_version(
-    name = "simple",
+    name = "HelloWorldVersion",
     build_version = "1.0.0",
     short_version_string = "1",
 )
@@ -79,9 +79,13 @@ apple_bundle_version(
 #   - main.m :Main
 #   - Application.swift :MainSwift
 #   - SceneDelegate.swift, (AppDelegate.swift optional) and OSLog+extension.swift :Lib
+#
+# infoplists:
+#   - Info.plist 'Root/Main'.plist for application
+#   - HelloWorldInfo.plist CFBundleDisplayName and UIApplicationSceneManifest
 ios_application(
     name = "HelloWorld",
-    deps = [":Main", ":MainSwift", ":Lib"],
+    bundle_name = "HelloWorld",
     bundle_id = "com.pepeunlimited.helloworld",
     families = [
         "iphone",
@@ -89,12 +93,12 @@ ios_application(
     ],
     infoplists = [
         "Info.plist",
+        "HelloWorldInfo.plist"
     ],
+    minimum_os_version = "12.0",
     launch_storyboard = "LaunchScreen.storyboard",
     resources = [],
-    minimum_os_version = "12.0",
-#    env = helloworld_env,
-    bundle_name = "HelloWorld",
-    version = ":simple",
+    version = ":HelloWorldVersion",
+    deps = [":Main", ":MainSwift", ":Lib"],
     visibility = ["//visibility:public"]
 )

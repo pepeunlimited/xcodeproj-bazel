@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+'Main/Root'.plist for iOS application.
+-->	
 <plist version="1.0">
 <dict>
+	<!--
+	<key>CFBundleDisplayName</key>			inherited @ HelloWorld/iOS/HelloWorldInfo.plist
+    <key>UIApplicationSceneManifest</key>	inherited @ HelloWorld/iOS/HelloWorldInfo.plist
+	<key>UILaunchStoryboardName</key>		inherited @ HelloWorld/iOS/BUILD launch_storyboard
+	<key>CFBundleName</key>					inherited @ HelloWorld/iOS/BUILD bundle_name
+	<key>CFBundleIdentifier</key>			inherited @ HelloWorld/iOS/BUILD bundle_id
+	<key>CFBundleShortVersionString</key>	inherited @ HelloWorld/iOS/BUILD build_version
+	<key>CFBundleVersion</key>				inherited @ HelloWorld/iOS/BUILD short_version_string
+    -->
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
-	<key>CFBundleDisplayName</key>
-	<string>$(PRODUCT_NAME)</string>
     <key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>q
+	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -18,23 +28,6 @@
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
-	<key>UIApplicationSceneManifest</key>
-	<dict>
-		<key>UIApplicationSupportsMultipleScenes</key>
-		<false/>
-		<key>UISceneConfigurations</key>
-		<dict>
-			<key>UIWindowSceneSessionRoleApplication</key>
-			<array>
-				<dict>
-					<key>UISceneConfigurationName</key>
-					<string>Default Configuration</string>
-					<key>UISceneDelegateClassName</key>
-					<string>SceneDelegate</string>
-				</dict>
-			</array>
-		</dict>
-	</dict>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
