@@ -54,7 +54,7 @@ swift_library(
         "AppDelegate.swift",
         "OSLog+extension.swift",
     ]),
-    visibility = ["//visibility:public"]
+    visibility = ["//visibility:private"]
 )
 
 ## OPTIONAL
@@ -64,18 +64,41 @@ helloworld_env = {
   "VARIABLE_2": "Something2",
 }
 
+# OPTIONAL
+## MARK: Localizable (.strings for .plist and application)
+
+# English localizations
+
+filegroup(
+    name = "EnglishStrings",
+    srcs = [
+        "en.lproj/Localizable.strings",
+        "en.lproj/InfoPlist.strings",
+    ]
+)
+
+# Finnish localizations
+
+filegroup(
+    name = "FinnishStrings",
+    srcs = [
+        "fi.lproj/Localizable.strings",
+        "fi.lproj/InfoPlist.strings",
+    ]
+)
+
 ## MARK: apple_bundle_version
 
 # REQUIRED
 apple_bundle_version(
-    name = "HelloWorldVersion",
+    name = "Version",
     build_version = "1.0.0",
     short_version_string = "1",
 )
 
 ## REQUIRED
 # The iOS application.
-# deps attach reference for:
+# deps: (attach reference for)
 #   - main.m :Main
 #   - Application.swift :MainSwift
 #   - SceneDelegate.swift, (AppDelegate.swift optional) and OSLog+extension.swift :Lib
@@ -83,6 +106,11 @@ apple_bundle_version(
 # infoplists:
 #   - Info.plist 'Root/Main'.plist for application
 #   - HelloWorldInfo.plist CFBundleDisplayName and UIApplicationSceneManifest
+#
+# strings: (list of .strings, if the directory is named *.lproj files are placed under same name
+# in the bundle) 
+#   - EnglishStrings (localizable.strings and InfoPlist.strings)
+#   - FinnishStrings (localizable.strings and InfoPlist.strings)
 ios_application(
     name = "HelloWorld",
     bundle_name = "HelloWorld",
@@ -98,7 +126,15 @@ ios_application(
     minimum_os_version = "12.0",
     launch_storyboard = "LaunchScreen.storyboard",
     resources = [],
-    version = ":HelloWorldVersion",
-    deps = [":Main", ":MainSwift", ":Lib"],
+    version = ":Version",
+    strings = [
+        ":EnglishStrings",
+        ":FinnishStrings"
+    ],
+    deps = [
+        ":Main",
+        ":MainSwift",
+        ":Lib"
+    ],
     visibility = ["//visibility:public"]
 )
