@@ -107,6 +107,11 @@ Clean
 $ bazel clean --expunge
 ```
 
+Simulator
+---------
+
+[`Failed to start launchd_sim: could not bind to session`](https://stackoverflow.com/questions/65172944/when-running-on-older-ios-simulator-error-failed-to-start-launchd-sim-could-n)
+
 License
 -------
 

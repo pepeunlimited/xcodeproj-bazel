@@ -10,7 +10,7 @@ import os
 import UIKit
 
 @available(iOS 13.0, *)
-@objc(SceneDelegate) class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+@objc(SceneDelegate) class SceneDelegaqte: UIResponder, UIWindowSceneDelegate {
   var window: UIWindow?
 
   func scene(_ scene: UIScene,
@@ -26,6 +26,7 @@ import UIKit
     print(osActivityDTMode)
     print(variable1)
     print(variable2)
+    print(Localization.HELLOWORLD_PRIMARY_TEXT)
     window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     window?.windowScene = windowScene
     window?.rootViewController = UIViewController()
