@@ -6,6 +6,7 @@
 //  See AUTHORS file for the list of project authors.
 //
 
+import Foundation
 import os
 import UIKit
 
@@ -29,8 +30,7 @@ import UIKit
     print(Localization.HELLOWORLD_PRIMARY_TEXT)
     window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     window?.windowScene = windowScene
-    window?.rootViewController = UIViewController()
-    window?.rootViewController?.view.backgroundColor = .red
+    window?.rootViewController = HelloWorldViewController()
     window?.makeKeyAndVisible()
   }
 

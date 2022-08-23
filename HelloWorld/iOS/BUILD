@@ -59,7 +59,8 @@ swift_library(
         "SceneDelegate.swift",
         "AppDelegate.swift",
         "OSLog+extension.swift",
-        "Localization.swift"
+        "Localization.swift",
+        "HelloWorldViewController.swift"
     ]),
     visibility = ["//visibility:private"]
 )

@@ -6,8 +6,9 @@
 //  See AUTHORS file for the list of project authors.
 //
 
-import os
+import Foundation
 import UIKit
+import os
 
 @objc(AppDelegate) class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
@@ -26,8 +27,7 @@ import UIKit
     } else {
       os_log(">> didFinishLaunchingWithOptions", log: OSLog.app, type: .debug)
       window = UIWindow(frame: UIScreen.main.bounds)
-      window?.rootViewController = UIViewController()
-      window?.rootViewController?.view.backgroundColor = .red
+      window?.rootViewController = HelloWorldViewController()
       window?.makeKeyAndVisible()
     }
     return true

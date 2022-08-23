@@ -1,5 +1,5 @@
 //
-//  Application.swift
+//  HelloWorldViewController.swift
 //
 //  Copyright 2022 Pepe Unlimited
 //  Licensed under the MIT license, see associated LICENSE file for terms.
@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
-@objc(Application) class Application: UIApplication {
+final class HelloWorldViewController: UIViewController {
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    view.backgroundColor = .red
+  } 
 
 }
