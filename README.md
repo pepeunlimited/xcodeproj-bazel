@@ -112,6 +112,12 @@ Simulator
 
 [`Failed to start launchd_sim: could not bind to session`](https://stackoverflow.com/questions/65172944/when-running-on-older-ios-simulator-error-failed-to-start-launchd-sim-could-n)
 
+Swift
+-----
+
+[`api-design-guidelines`](https://www.swift.org/documentation/api-design-guidelines/)  
+[`.swiftlint.yml`](https://realm.github.io/SwiftLint/rule-directory.html)  
+
 License
 -------
 

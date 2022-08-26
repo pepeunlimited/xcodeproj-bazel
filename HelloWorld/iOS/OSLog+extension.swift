@@ -16,4 +16,6 @@ extension OSLog {
   static let app: OSLog = OSLog(subsystem: subsystem, category: "app")
 
   static let scene: OSLog = OSLog(subsystem: subsystem, category: "scene")
+
+  static let viewCycle: OSLog = OSLog(subsystem: subsystem, category: "viewCycle")
 }

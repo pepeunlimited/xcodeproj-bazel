@@ -12,22 +12,14 @@ import UIKit
 
 @available(iOS 13.0, *)
 @objc(SceneDelegate) class SceneDelegaqte: UIResponder, UIWindowSceneDelegate {
+
   var window: UIWindow?
 
   func scene(_ scene: UIScene,
              willConnectTo session: UISceneSession,
              options connectionOptions: UIScene.ConnectionOptions) {
-    guard let windowScene = scene as? UIWindowScene else { return }
-
-    let osActivityDTMode: String? = ProcessInfo.processInfo.environment["OS_ACTIVITY_DT_MODE"] as String?
-    let variable1: String? = ProcessInfo.processInfo.environment["VARIABLE_1"] as String?
-    let variable2: String? = ProcessInfo.processInfo.environment["VARIABLE_2"] as String?
-
     os_log(">> willConnectTo session", log: OSLog.scene, type: .debug)
-    print(osActivityDTMode)
-    print(variable1)
-    print(variable2)
-    print(Localization.HELLOWORLD_PRIMARY_TEXT)
+    guard let windowScene = scene as? UIWindowScene else { return }
     window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     window?.windowScene = windowScene
     window?.rootViewController = HelloWorldViewController()
@@ -35,17 +27,22 @@ import UIKit
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {
+    // TODO: sceneDidDisconnect
   }
 
   func sceneDidBecomeActive(_ scene: UIScene) {
+    // TODO: sceneDidBecomeActive
   }
 
   func sceneWillResignActive(_ scene: UIScene) {
+    // TODO: sceneWillResignActive
   }
 
   func sceneWillEnterForeground(_ scene: UIScene) {
+    // TODO: sceneWillEnterForeground
   }
 
   func sceneDidEnterBackground(_ scene: UIScene) {
+    // TODO: sceneDidEnterBackground
   }
 }

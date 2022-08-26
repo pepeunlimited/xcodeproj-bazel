@@ -7,23 +7,23 @@
 //
 
 import Foundation
-import UIKit
 import os
+import UIKit
 
 @objc(AppDelegate) class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(_ application: UIApplication,
                    willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    return true
+    true
   }
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     if #available(iOS 13.0, *) {
       // @see more at SceneDelegate.swift
-      os_log(">> skip didFinishLaunchingWithOptions function, iOS version is greater than 13.0",
-      log: OSLog.app, type: .debug)
+      os_log(">> skip didFinishLaunchingWithOptions function, iOS version is greater than 13",
+             log: OSLog.app, type: .debug)
     } else {
       os_log(">> didFinishLaunchingWithOptions", log: OSLog.app, type: .debug)
       window = UIWindow(frame: UIScreen.main.bounds)
@@ -34,31 +34,36 @@ import os
   }
 
   func applicationWillResignActive(_ application: UIApplication) {
-    // NOT #available(iOS 13.0, *)
+    // NOTICE: not executed if #available(iOS 13.0, *)
+    // TODO: applicationWillResignActive
   }
 
   func applicationDidEnterBackground(_ application: UIApplication) {
-    // NOT #available(iOS 13.0, *)
+    // NOTICE: not executed if #available(iOS 13.0, *)
+    // TODO: applicationDidEnterBackground
   }
 
   func applicationWillEnterForeground(_ application: UIApplication) {
-    // NOT #available(iOS 13.0, *)
+    // NOTICE: not executed if #available(iOS 13.0, *)
+    // TODO: applicationWillEnterForeground
   }
 
   func applicationDidBecomeActive(_ application: UIApplication) {
-    // NOT #available(iOS 13.0, *)
+    // NOTICE: not executed if #available(iOS 13.0, *)
+    // TODO: applicationDidBecomeActive
   }
 
   @available(iOS 13.0, *)
   func application(_ application: UIApplication,
                    configurationForConnecting connectingSceneSession: UISceneSession,
                    options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-    return UISceneConfiguration(name: "Default Configuration",
-                                sessionRole: connectingSceneSession.role)
+    UISceneConfiguration(name: "Default Configuration",
+                         sessionRole: connectingSceneSession.role)
   }
 
   @available(iOS 13.0, *)
   func application(_ application: UIApplication,
                    didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+    // TODO: didDiscardSceneSessions
   }
 }

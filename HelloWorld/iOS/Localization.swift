@@ -9,5 +9,5 @@ import Foundation
 
 enum Localization {
 
-  static let HELLOWORLD_PRIMARY_TEXT: String = NSLocalizedString("HELLOWORLD_PRIMARY_TEXT", comment: "")
+  static let primaryText: String = NSLocalizedString("PRIMARY_TEXT", comment: "")
 }

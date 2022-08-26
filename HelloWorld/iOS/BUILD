@@ -60,7 +60,10 @@ swift_library(
         "AppDelegate.swift",
         "OSLog+extension.swift",
         "Localization.swift",
-        "HelloWorldViewController.swift"
+        "HelloWorldViewController.swift",
+        "RGBColorView.swift",
+        "UIStackView+extension.swift",
+        "UIView+extension.swift",
     ]),
     visibility = ["//visibility:private"]
 )

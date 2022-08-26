@@ -11,12 +11,12 @@ excluded:
 disabled_rules:
   - nesting
 opt_in_rules:
-  - closure_end_indentation
-  - closure_spacing
-  - colon
-  - overridden_super_call
+  - prohibited_interface_builder
+  - convenience_type
+  - sorted_imports
   - unused_import
-  - fatal_error_message
+  - yoda_condition
+  - vertical_parameter_alignment_on_call
 force_cast: warning
 force_try: warning
 legacy_hashing: error
