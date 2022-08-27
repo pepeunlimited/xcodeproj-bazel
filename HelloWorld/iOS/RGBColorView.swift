@@ -23,7 +23,7 @@ final class RGBColorView: UIView {
                                         alignment: .leading,
                                         distribution: .fill)
 
-  // MARK: initializer
+  // MARK: Initializer
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -34,7 +34,7 @@ final class RGBColorView: UIView {
       hStack.topAnchor.constraint(equalTo: topAnchor),
       hStack.leadingAnchor.constraint(equalTo: leadingAnchor),
       hStack.trailingAnchor.constraint(equalTo: trailingAnchor),
-      hStack.bottomAnchor.constraint(equalTo: bottomAnchor),
+      hStack.bott∆omAnchor.constraint(equalTo: bottomAnchor),
     ])
   }
 
@@ -42,7 +42,13 @@ final class RGBColorView: UIView {
     fatalError("not supported")
   }
 
-  // MARK: domain logic
+  // MARK: Configure
+
+  func configureView() {
+    translatesAutoresizingMaskIntoConstraints = false
+  }
+
+  // MARK: Domain
 
   func start(_ animated: Bool) {
     let hStack: UIStackView = UIStackView(frame: .zero, axis: .horizontal)
@@ -57,10 +63,6 @@ final class RGBColorView: UIView {
       ])
       hStack.addArrangedSubview(view)
     }
-  }
-
-  func configureView() {
-    translatesAutoresizingMaskIntoConstraints = false
   }
 }
 

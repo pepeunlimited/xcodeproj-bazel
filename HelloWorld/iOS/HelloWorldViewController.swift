@@ -15,7 +15,7 @@ final class HelloWorldViewController: UIViewController {
   let rgbColorView: RGBColorView = RGBColorView(frame: .zero,
                                                 translatesAutoresizingMaskIntoConstraints: false)
 
-  // MARK: initializer
+  // MARK: Initializer
 
   public init() {
     super.init(nibName: nil, bundle: nil)
@@ -35,7 +35,7 @@ final class HelloWorldViewController: UIViewController {
     rgbColorView.start(false)
   }
 
-  // MARK: domain logic
+  // MARK: Configure
 
   func configureView() {
     view.translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +52,7 @@ final class HelloWorldViewController: UIViewController {
     ])
   }
 
-  // MARK: log
+  // MARK: os_log
 
   func printLog() {
     let osActivityDTMode: String? = ProcessInfo.processInfo.environment["OS_ACTIVITY_DT_MODE"] as String?
