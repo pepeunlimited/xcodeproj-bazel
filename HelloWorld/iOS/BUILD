@@ -58,12 +58,13 @@ swift_library(
     srcs = glob([
         "SceneDelegate.swift",
         "AppDelegate.swift",
-        "OSLog+extension.swift",
         "Localization.swift",
         "HelloWorldViewController.swift",
         "RGBColorView.swift",
+        "OSLog+extension.swift",
         "UIStackView+extension.swift",
         "UIView+extension.swift",
+        "UIColor+extension.swift"
     ]),
     visibility = ["//visibility:private"]
 )

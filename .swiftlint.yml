@@ -10,6 +10,7 @@ excluded:
   - HelloWorld/iOS/main.m
 disabled_rules:
   - nesting
+  - todo
 opt_in_rules:
   - prohibited_interface_builder
   - convenience_type
@@ -26,5 +27,10 @@ trailing_comma:
   mandatory_comma: true
 identifier_name:
   max_length: 
-    warning: 60 
-    error: 80
+    warning: 80
+    error: 120
+  excluded:
+  - r
+  - b
+  - g
+  - a

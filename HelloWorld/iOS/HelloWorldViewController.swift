@@ -15,6 +15,9 @@ final class HelloWorldViewController: UIViewController {
   let rgbColorView: RGBColorView = RGBColorView(frame: .zero,
                                                 translatesAutoresizingMaskIntoConstraints: false)
 
+  let scrollView: UIScrollView = UIScrollView(frame: .zero,
+                                              translatesAutoresizingMaskIntoConstraints: false)
+
   // MARK: Initializer
 
   public init() {
@@ -31,8 +34,18 @@ final class HelloWorldViewController: UIViewController {
     super.viewDidLoad()
     printLog()
     configureView()
+    configureScrollView()
     configureRGBColorView()
     rgbColorView.start(false)
+
+  }
+
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    os_log(">> view=%@",
+           log: OSLog.viewCycle,
+           type: .debug,
+           String(describing: view.frame.size))
   }
 
   // MARK: Configure
@@ -42,13 +55,36 @@ final class HelloWorldViewController: UIViewController {
     view.backgroundColor = backgroundColor
   }
 
-  func configureRGBColorView() {
-    view.addSubview(rgbColorView)
+  func configureScrollView() {
+    scrollView.backgroundColor = .clear
+    view.addSubview(scrollView)
+    // @see https://stackoverflow.com/a/64560447/3913343
     NSLayoutConstraint.activate([
-      rgbColorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      rgbColorView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-      rgbColorView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-      rgbColorView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+      // scrollView
+      scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+      scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+      scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+      // contentView
+      // contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+      // contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+      // contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
+      // contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
+      // vertical scroll
+      // contentView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor)
+    ])
+  }
+
+  func configureRGBColorView() {
+    scrollView.addSubview(rgbColorView)
+    rgbColorView.contentViewSize = view.frame.size
+    NSLayoutConstraint.activate([
+      rgbColorView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+      rgbColorView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+      rgbColorView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
+      rgbColorView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
+      // vertical scroll
+      rgbColorView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor),
     ])
   }
 

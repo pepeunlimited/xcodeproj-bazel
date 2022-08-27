@@ -7,11 +7,16 @@
 //
 
 import Foundation
+import os
 import UIKit
 
 final class RGBColorView: UIView {
 
   var columns: Int = 4
+
+  var rows: Int = 8
+
+  var contentViewSize: CGSize = .zero
 
   let hStack: UIStackView = UIStackView(frame: .zero,
                                         axis: .horizontal,
@@ -34,7 +39,7 @@ final class RGBColorView: UIView {
       hStack.topAnchor.constraint(equalTo: topAnchor),
       hStack.leadingAnchor.constraint(equalTo: leadingAnchor),
       hStack.trailingAnchor.constraint(equalTo: trailingAnchor),
-      hStack.bott∆omAnchor.constraint(equalTo: bottomAnchor),
+      hStack.bottomAnchor.constraint(equalTo: bottomAnchor),
     ])
   }
 
@@ -51,17 +56,19 @@ final class RGBColorView: UIView {
   // MARK: Domain
 
   func start(_ animated: Bool) {
-    let hStack: UIStackView = UIStackView(frame: .zero, axis: .horizontal)
-    vStack.addArrangedSubview(hStack)
-    for _ in 0...columns - 1 {
-      let view = UIView(frame: .zero,
-                        translatesAutoresizingMaskIntoConstraints: false)
-      view.backgroundColor = .red
-      NSLayoutConstraint.activate([
-        view.widthAnchor.constraint(equalToConstant: rgbViewSize.width),
-        view.heightAnchor.constraint(equalToConstant: rgbViewSize.height),
-      ])
-      hStack.addArrangedSubview(view)
+    for _ in 0...rows - 1 {
+      let hStack: UIStackView = UIStackView(frame: .zero, axis: .horizontal)
+      vStack.addArrangedSubview(hStack)
+      for _ in 0...columns - 1 {
+        let view = UIView(frame: .zero,
+                          translatesAutoresizingMaskIntoConstraints: false)
+        view.backgroundColor = UIColor.schemes[Int.random(in: 0...5)]
+        NSLayoutConstraint.activate([
+          view.widthAnchor.constraint(equalToConstant: rgbSize.width),
+          view.heightAnchor.constraint(equalToConstant: rgbSize.height),
+        ])
+        hStack.addArrangedSubview(view)
+      }
     }
   }
 }
@@ -70,15 +77,16 @@ final class RGBColorView: UIView {
 
 extension RGBColorView {
 
-  var parentViewSize: CGSize {
-    guard let size = superview?.frame.size else {
-      return .zero
-    }
-    return size
+  var rgbSize: CGSize {
+    let width: CGFloat = contentViewSize.width / CGFloat(columns)
+    let height: CGFloat = contentViewSize.height / CGFloat(rows)
+    return CGSize(width: width, height: height)
   }
+}
 
-  var rgbViewSize: CGSize {
-    let width: CGFloat = parentViewSize.width / CGFloat(columns)
-    return CGSize(width: width, height: width)
+extension RGBColorView {
+
+  override var debugDescription: String {
+    "RGBColorView rgbSize: \(rgbSize), columns: \(columns), rows: \(rows)"
   }
 }
