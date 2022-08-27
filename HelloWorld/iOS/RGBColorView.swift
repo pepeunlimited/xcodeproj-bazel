@@ -28,6 +28,16 @@ final class RGBColorView: UIView {
                                         alignment: .leading,
                                         distribution: .fill)
 
+  var schemes: [UIColor] = [
+    UIColor.bblue,
+    UIColor.wwhite,
+    UIColor.bblack,
+    UIColor.ccyan,
+    UIColor.rred,
+    UIColor.yyellow
+  ]
+
+
   // MARK: Initializer
 
   override init(frame: CGRect) {
@@ -62,7 +72,7 @@ final class RGBColorView: UIView {
       for _ in 0...columns - 1 {
         let view = UIView(frame: .zero,
                           translatesAutoresizingMaskIntoConstraints: false)
-        view.backgroundColor = UIColor.schemes[Int.random(in: 0...5)]
+        view.backgroundColor = schemes[Int.random(in: 0...5)]
         NSLayoutConstraint.activate([
           view.widthAnchor.constraint(equalToConstant: rgbSize.width),
           view.heightAnchor.constraint(equalToConstant: rgbSize.height),

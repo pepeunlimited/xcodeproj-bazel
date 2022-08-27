@@ -41,15 +41,4 @@ extension UIColor {
   static var yyellow: UIColor {
     UIColor.init(r: 255, g: 159, b: 28)
   }
-
-  static var schemes: [UIColor] {
-    [
-      UIColor.bblue,
-      UIColor.wwhite,
-      UIColor.bblack,
-      UIColor.ccyan,
-      UIColor.rred,
-      UIColor.yyellow
-    ]
-  }
 }
