@@ -36,8 +36,7 @@ final class HelloWorldViewController: UIViewController {
     configureView()
     configureScrollView()
     configureRGBColorView()
-    rgbColorView.start(false)
-
+    rgbColorView.start(true)
   }
 
   override func viewDidLayoutSubviews() {
@@ -78,6 +77,8 @@ final class HelloWorldViewController: UIViewController {
   func configureRGBColorView() {
     scrollView.addSubview(rgbColorView)
     rgbColorView.contentViewSize = view.frame.size
+    rgbColorView.columns = 40
+    rgbColorView.rows = 80
     NSLayoutConstraint.activate([
       rgbColorView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
       rgbColorView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),

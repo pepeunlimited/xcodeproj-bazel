@@ -18,6 +18,11 @@ load("@build_bazel_rules_swift//swift:swift.bzl",
     "swift_library",
 )
 
+load("@build_bazel_rules_apple//apple:resources.bzl",
+    "apple_resource_group"
+)
+
+
 # REQUIRED
 ########################
 #### MARK: objc_library
@@ -43,6 +48,9 @@ swift_library(
     srcs = glob([
         "Application.swift",
     ]),
+    data = [
+        ":ColorAssets"
+    ],
     visibility = ["//visibility:private"]
 )
 
@@ -104,6 +112,35 @@ filegroup(
     ]
 )
 
+# OPTIONAL
+#####################
+#### MARK: LaunchIcon
+#####################
+filegroup(
+    name = "LaunchIcon",
+    srcs = glob(["LaunchIcon.xcassets/**"])
+)
+
+# OPTIONAL
+##################
+##### MARK: Assets
+##################
+
+filegroup(
+    name = "Assets",
+    srcs = glob(["Assets.xcassets/**"]),
+)
+
+# OPTIONAL
+##################
+##### MARK: Assets
+##################
+
+filegroup(
+    name = "ColorAssets",
+    srcs = glob(["ColorAssets.xcassets/**"]),
+)
+
 # REQUIRED
 ###############################
 #### MARK: apple_bundle_version
@@ -126,6 +163,13 @@ apple_bundle_version(
 #   - Application.swift swift_library:MainSwift
 #   - swift_library:Lib
 #
+# NOTICE:
+# @see the issue with .xcodeproj https://github.com/bazelbuild/tulsi/issues/357
+# until that is fixed, .xcassets folders won't be visible on the .xcodeproj
+# app_icons:
+#   - LaunchIcon iOS/LaunchIcon.xcassets/LaunchIcon.appiconset/(Contents.json and .png) Launch icons for the application
+#   - Assets iOS/LaunchIcon.xcassets/LaunchIcon.appiconset/(Contents.json and .png) Assets for the application
+#
 # infoplists:
 #   - Info.plist 'Root/Main'.plist for application
 #   - HelloWorldInfo.plist CFBundleDisplayName and UIApplicationSceneManifest
@@ -134,10 +178,15 @@ apple_bundle_version(
 # in the bundle) 
 #   - EnglishStrings iOS/en.lproj/(localizable.strings and InfoPlist.strings)
 #   - FinnishStrings iOS/fi.lproj/(localizable.strings and InfoPlist.strings)
+#
+# @see https://github.com/bazel-ios/rules_ios/blob/master/rules/app.bzl
 ios_application(
     name = "HelloWorld",
     bundle_name = "HelloWorld",
     bundle_id = "com.pepeunlimited.helloworld",
+    app_icons = [
+        ":LaunchIcon",
+    ],
     families = [
         "iphone",
         "ipad"
@@ -146,9 +195,12 @@ ios_application(
         "Info.plist",
         "HelloWorldInfo.plist"
     ],
+    resources = [
+        ":Assets",
+
+    ],
     minimum_os_version = "12.0",
     launch_storyboard = "LaunchScreen.storyboard",
-    resources = [],
     version = ":HelloWorldVersion",
     strings = [
         ":EnglishStrings",

@@ -1,1 +1,3 @@
 /* Localized versions of Info.plist keys */
+"CFBundleDisplayName" = "Hei Maailma"; /* your app name */
+"CFBundleName"  = "Hei Maailma"; /* your app name */

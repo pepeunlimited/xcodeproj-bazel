@@ -11,10 +11,10 @@ import os
 import UIKit
 
 final class RGBColorView: UIView {
+    
+  var columns: Int = 5
 
-  var columns: Int = 4
-
-  var rows: Int = 8
+  var rows: Int = 10
 
   var contentViewSize: CGSize = .zero
 
@@ -34,9 +34,8 @@ final class RGBColorView: UIView {
     UIColor.bblack,
     UIColor.ccyan,
     UIColor.rred,
-    UIColor.yyellow
+    UIColor.yyellow,
   ]
-
 
   // MARK: Initializer
 
@@ -70,14 +69,27 @@ final class RGBColorView: UIView {
       let hStack: UIStackView = UIStackView(frame: .zero, axis: .horizontal)
       vStack.addArrangedSubview(hStack)
       for _ in 0...columns - 1 {
-        let view = UIView(frame: .zero,
-                          translatesAutoresizingMaskIntoConstraints: false)
-        view.backgroundColor = schemes[Int.random(in: 0...5)]
+        let rgbView: UIView = UIView(frame: .zero,
+                                     translatesAutoresizingMaskIntoConstraints: false)
+        let schemesCount: Int = schemes.count - 1
+        let fromColor: UIColor = schemes[Int.random(in: 0...schemesCount)]
+        let toColor: UIColor = schemes[Int.random(in: 0...schemesCount)]
+        rgbView.backgroundColor = fromColor
+        if animated {
+          let animation: CABasicAnimation = CABasicAnimation(keyPath: "backgroundColor")
+          animation.fromValue = fromColor.cgColor
+          animation.toValue = toColor.cgColor
+          animation.duration = 3
+          animation.beginTime = CACurrentMediaTime()
+          animation.repeatCount = .infinity
+          animation.autoreverses = true
+          rgbView.layer.add(animation, forKey: nil)
+        }
         NSLayoutConstraint.activate([
-          view.widthAnchor.constraint(equalToConstant: rgbSize.width),
-          view.heightAnchor.constraint(equalToConstant: rgbSize.height),
+          rgbView.widthAnchor.constraint(equalToConstant: rgbSize.width),
+          rgbView.heightAnchor.constraint(equalToConstant: rgbSize.height),
         ])
-        hStack.addArrangedSubview(view)
+        hStack.addArrangedSubview(rgbView)
       }
     }
   }

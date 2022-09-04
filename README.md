@@ -70,6 +70,8 @@ $ open $SRCROOT/xcodeproj-bazel/build-input/gen/project/HelloWorld.xcodeproj
 Documentation & Links
 -------------
 
+[`This documentation is collected from rulesets in the bazelbuild GitHub org`](https://docs.aspect.build/)
+<br/>
 [`bazelbuild/rules_apple`](https://github.com/bazelbuild/rules_apple/tree/master/doc)  
 [`bazelbuild/rules_swift`](https://github.com/bazelbuild/rules_swift/tree/master/doc)  
 [`bazelbuild/apple_support`](https://github.com/bazelbuild/apple_support/tree/master/doc)  
@@ -82,7 +84,8 @@ Documentation & Links
 [`ios_and_bazel_at_reddit_a_journey`](https://www.reddit.com/r/RedditEng/comments/syz5dw/ios_and_bazel_at_reddit_a_journey/)  
 [`migrating-ios-project-to-bazel-a-real-world-experience`](https://liuliu.me/eyes/migrating-ios-project-to-bazel-a-real-world-experience/)  
 [`google-mediapipe-examples-ios`](https://github.com/google/mediapipe/tree/master/mediapipe/examples/ios)  
-
+[`Telegram-iOS`](https://github.com/TelegramMessenger/Telegram-iOS)  
+[`TulsiGeneratorIntegrationTests`](https://github.com/bazelbuild/tulsi/tree/master/src/TulsiGeneratorIntegrationTests/Resources)  
 
 iOS
 ---
