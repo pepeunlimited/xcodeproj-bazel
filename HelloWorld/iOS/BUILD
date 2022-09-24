@@ -48,9 +48,7 @@ swift_library(
     srcs = glob([
         "Application.swift",
     ]),
-    data = [
-        ":ColorAssets"
-    ],
+    data = [],
     visibility = ["//visibility:private"]
 )
 
@@ -132,9 +130,9 @@ filegroup(
 )
 
 # OPTIONAL
-##################
-##### MARK: Assets
-##################
+#######################
+##### MARK: ColorAssets
+#######################
 
 filegroup(
     name = "ColorAssets",
@@ -163,12 +161,15 @@ apple_bundle_version(
 #   - Application.swift swift_library:MainSwift
 #   - swift_library:Lib
 #
-# NOTICE:
-# @see the issue with .xcodeproj https://github.com/bazelbuild/tulsi/issues/357
-# until that is fixed, .xcassets folders won't be visible on the .xcodeproj
+# !! NOTICE:                                                                       !!
+# !! @see the issue with .xcodeproj https://github.com/bazelbuild/tulsi/issues/357 !!
+# !! .xcassets folders won't be visible on the Xcode.                              !!
+# !! Sometimes resources changes doesn't appear, workaround is restart simulator.  !!
+#
 # app_icons:
 #   - LaunchIcon iOS/LaunchIcon.xcassets/LaunchIcon.appiconset/(Contents.json and .png) Launch icons for the application
-#   - Assets iOS/LaunchIcon.xcassets/LaunchIcon.appiconset/(Contents.json and .png) Assets for the application
+#   - Assets iOS/Assets.xcassets/*.imageset/(Contents.json and .png) Assets for the application
+#   - ColorAssets iOS/ColorAssets.xcassets/*.colorset/Contents.json Colors for the application
 #
 # infoplists:
 #   - Info.plist 'Root/Main'.plist for application
@@ -197,7 +198,7 @@ ios_application(
     ],
     resources = [
         ":Assets",
-
+        ":ColorAssets"
     ],
     minimum_os_version = "12.0",
     launch_storyboard = "LaunchScreen.storyboard",

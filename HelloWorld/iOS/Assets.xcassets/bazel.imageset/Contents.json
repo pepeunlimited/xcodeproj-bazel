@@ -1,17 +1,17 @@
 {
   "images": [
     {
-      "filename": "globe2.png",
+      "filename": "bazel.png",
       "idiom": "universal",
       "scale": "1x"
     },
     {
-      "filename": "globe2@2x.png",
+      "filename": "bazel@2x.png",
       "idiom": "universal",
       "scale": "2x"
     },
     {
-      "filename": "globe2@3x.png",
+      "filename": "bazel@3x.png",
       "idiom": "universal",
       "scale": "3x"
     }
