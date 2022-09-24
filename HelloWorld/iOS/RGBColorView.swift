@@ -11,7 +11,7 @@ import os
 import UIKit
 
 final class RGBColorView: UIView {
-    
+
   var columns: Int = 5
 
   var rows: Int = 10
