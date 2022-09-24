@@ -33,7 +33,7 @@ $ /usr/bin/xcodebuild -version
 
 Build and run [`Tulsi`](https://tulsi.bazel.build/)  
 ```
-$ sh build-system/tulsi/build_and_run.sh -x $XCODE_VERSION
+$ (cd build-system/tulsi; sh build_and_run.sh -x 14.0)
 ```
 
 Getting started
@@ -86,6 +86,9 @@ Documentation & Links
 [`google-mediapipe-examples-ios`](https://github.com/google/mediapipe/tree/master/mediapipe/examples/ios)  
 [`Telegram-iOS`](https://github.com/TelegramMessenger/Telegram-iOS)  
 [`TulsiGeneratorIntegrationTests`](https://github.com/bazelbuild/tulsi/tree/master/src/TulsiGeneratorIntegrationTests/Resources)  
+<br/>
+[`.imageset`](https://appicon.co/#image-sets)  
+<br/>
 
 iOS
 ---
@@ -113,7 +116,30 @@ $ bazel clean --expunge
 Simulator
 ---------
 
+Boot  
+```
+$ xcrun simctl boot "iPhone 14"
+```
+
+Open Simulator.app  
+```
+$ open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
+```
+
 [`Failed to start launchd_sim: could not bind to session`](https://stackoverflow.com/questions/65172944/when-running-on-older-ios-simulator-error-failed-to-start-launchd-sim-could-n)
+
+oslog
+-----
+
+See the list of running simulators  
+```
+$ xcrun simctl list
+```
+
+View the log stream on console  
+```
+$ xcrun simctl spawn '5A709945-ED74-45F3-A248-AA289FE92497' log stream --debug --predicate 'subsystem == "com.pepeunlimited.helloworld"'
+```
 
 Swift
 -----
