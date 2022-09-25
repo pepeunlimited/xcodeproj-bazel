@@ -36,6 +36,11 @@ Build and run [`Tulsi`](https://tulsi.bazel.build/)
 $ (cd build-system/tulsi; sh build_and_run.sh -x 14.0)
 ```
 
+Test that bazel should be able to build iOS project with the Bazel
+```
+$ bazel build //HelloWorld/iOS:HelloWorld
+```
+
 Getting started
 ---------------
 
@@ -67,46 +72,33 @@ Open the `Xcode`
 $ open $SRCROOT/xcodeproj-bazel/build-input/gen/project/HelloWorld.xcodeproj
 ```
 
-Documentation & Links
--------------
-
-[`This documentation is collected from rulesets in the bazelbuild GitHub org`](https://docs.aspect.build/)
-<br/>
-[`bazelbuild/rules_apple`](https://github.com/bazelbuild/rules_apple/tree/master/doc)  
-[`bazelbuild/rules_swift`](https://github.com/bazelbuild/rules_swift/tree/master/doc)  
-[`bazelbuild/apple_support`](https://github.com/bazelbuild/apple_support/tree/master/doc)  
-[`bazelbuild/bazel-skylib`](https://github.com/bazelbuild/bazel-skylib/tree/main/docs)  
-[`bazel.build/command-line-reference`](https://bazel.build/reference/command-line-reference)  
-<br/>
-[`Bazel Tutorial: Build an iOS App`](https://bazel.build/tutorials/ios-app)  
-[`Migrating from Xcode to Bazel`](https://bazel.build/migrate/xcode)  
-[`Building with Bazel`](https://www.raywenderlich.com/31558158-building-with-bazel/)  
-[`ios_and_bazel_at_reddit_a_journey`](https://www.reddit.com/r/RedditEng/comments/syz5dw/ios_and_bazel_at_reddit_a_journey/)  
-[`migrating-ios-project-to-bazel-a-real-world-experience`](https://liuliu.me/eyes/migrating-ios-project-to-bazel-a-real-world-experience/)  
-[`google-mediapipe-examples-ios`](https://github.com/google/mediapipe/tree/master/mediapipe/examples/ios)  
-[`Telegram-iOS`](https://github.com/TelegramMessenger/Telegram-iOS)  
-[`TulsiGeneratorIntegrationTests`](https://github.com/bazelbuild/tulsi/tree/master/src/TulsiGeneratorIntegrationTests/Resources)  
-<br/>
-[`.imageset`](https://appicon.co/#image-sets)  
-<br/>
-
 iOS
 ---
 
 `LaunchScreen.storyboard` is required to be configured, otherwise `UIScreen.main.bounds` and `windowScene.coordinateSpace.bounds` causes misbehavior for application.  
 
-Bazel
------
-
-Build  
+Build the application  
 ```
 $ bazel build //HelloWorld/iOS:HelloWorld
 ```
 
-Run  
+Run the application  
 ```
 $ bazel run //HelloWorld/iOS:HelloWorld
 ```
+
+Build the unit test
+```
+$ bazel build //HelloWorld/iOS:XCUnitTest
+```
+
+Run the unit test  
+```
+$ bazel run //HelloWorld/iOS:XCUnitTest
+```
+
+Bazel
+-----
 
 Clean  
 ```
@@ -140,12 +132,35 @@ View the log stream on console
 ```
 $ xcrun simctl spawn '5A709945-ED74-45F3-A248-AA289FE92497' log stream --debug --predicate 'subsystem == "com.pepeunlimited.helloworld"'
 ```
-
 Swift
 -----
 
 [`api-design-guidelines`](https://www.swift.org/documentation/api-design-guidelines/)  
 [`.swiftlint.yml`](https://realm.github.io/SwiftLint/rule-directory.html)  
+
+Documentation & Links
+---------------------
+
+[`This documentation is collected from rulesets in the bazelbuild GitHub org`](https://docs.aspect.build/)
+<br/>
+[`bazelbuild/rules_apple`](https://github.com/bazelbuild/rules_apple/tree/master/doc)  
+[`bazelbuild/rules_swift`](https://github.com/bazelbuild/rules_swift/tree/master/doc)  
+[`bazelbuild/apple_support`](https://github.com/bazelbuild/apple_support/tree/master/doc)  
+[`bazelbuild/bazel-skylib`](https://github.com/bazelbuild/bazel-skylib/tree/main/docs)  
+[`bazel.build/command-line-reference`](https://bazel.build/reference/command-line-reference)  
+<br/>
+[`Bazel Tutorial: Build an iOS App`](https://bazel.build/tutorials/ios-app)  
+[`Migrating from Xcode to Bazel`](https://bazel.build/migrate/xcode)  
+[`Building with Bazel`](https://www.raywenderlich.com/31558158-building-with-bazel/)  
+[`ios_and_bazel_at_reddit_a_journey`](https://www.reddit.com/r/RedditEng/comments/syz5dw/ios_and_bazel_at_reddit_a_journey/)  
+[`migrating-ios-project-to-bazel-a-real-world-experience`](https://liuliu.me/eyes/migrating-ios-project-to-bazel-a-real-world-experience/)  
+[`google-mediapipe-examples-ios`](https://github.com/google/mediapipe/tree/master/mediapipe/examples/ios)  
+[`Telegram-iOS`](https://github.com/TelegramMessenger/Telegram-iOS)  
+[`TulsiGeneratorIntegrationTests`](https://github.com/bazelbuild/tulsi/tree/master/src/TulsiGeneratorIntegrationTests/Resources)  
+<br/>
+[`.imageset`](https://appicon.co/#image-sets)  
+<br/>
+
 
 License
 -------
