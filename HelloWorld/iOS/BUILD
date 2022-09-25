@@ -8,6 +8,7 @@
 
 load("@build_bazel_rules_apple//apple:ios.bzl",
     "ios_application",
+    "ios_unit_test"
 )
 
 load("@build_bazel_rules_apple//apple:versioning.bzl",
@@ -148,6 +149,19 @@ apple_bundle_version(
     name = "HelloWorldVersion",
     build_version = "0.0.1",
     short_version_string = "1",
+)
+
+# OPTIONAL
+########################
+#### MARK: ios_unit_test
+########################
+
+ios_unit_test(
+    name = "XCUnitTest",
+    deps = [],
+    platform_type = "ios",
+    minimum_os_version = "12.0"
+#    test_host = ":HelloWorld"
 )
 
 # REQUIRED
