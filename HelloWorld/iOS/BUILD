@@ -8,7 +8,6 @@
 
 load("@build_bazel_rules_apple//apple:ios.bzl",
     "ios_application",
-    "ios_unit_test"
 )
 
 load("@build_bazel_rules_apple//apple:versioning.bzl",
@@ -23,7 +22,6 @@ load("@build_bazel_rules_apple//apple:resources.bzl",
     "apple_resource_group"
 )
 
-
 # REQUIRED
 ########################
 #### MARK: objc_library
@@ -37,6 +35,7 @@ objc_library(
     srcs = [
         "main.m"
     ],
+    visibility = ["//visibility:private"]
 )
 
 # REQUIRED
@@ -49,7 +48,6 @@ swift_library(
     srcs = glob([
         "Application.swift",
     ]),
-    data = [],
     visibility = ["//visibility:private"]
 )
 
@@ -73,7 +71,11 @@ swift_library(
         "UIView+extension.swift",
         "UIColor+extension.swift"
     ]),
-    visibility = ["//visibility:private"]
+    deps = [
+        "//submodules/SharedKit:SharedKit",
+        "//submodules/OSExtension:OSExtension"
+    ],
+    visibility = ["//visibility:public"]
 )
 
 # OPTIONAL
@@ -151,19 +153,6 @@ apple_bundle_version(
     short_version_string = "1",
 )
 
-# OPTIONAL
-########################
-#### MARK: ios_unit_test
-########################
-
-ios_unit_test(
-    name = "XCUnitTest",
-    deps = [],
-    platform_type = "ios",
-    minimum_os_version = "12.0"
-#    test_host = ":HelloWorld"
-)
-
 # REQUIRED
 ##########################
 #### MARK: ios_application
@@ -221,10 +210,14 @@ ios_application(
         ":EnglishStrings",
         ":FinnishStrings"
     ],
+    frameworks = [
+#        "//submodules/SharedKit:SharedKitFramework",
+#        "//submodules/OSExtension:OSExtensionFramework"
+    ],
     deps = [
         ":Main",
         ":MainSwift",
-        ":Lib"
+        ":Lib",
     ],
     visibility = ["//visibility:public"]
 )

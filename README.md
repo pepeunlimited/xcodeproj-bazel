@@ -53,8 +53,9 @@ $ sh build-system/generate-xcodeproj.sh \
 --outputfolder build-input/gen/project \
 --create-tulsiproj HelloWorld.tulsiproj \
 --workspaceroot ./ \
---additionalSourceFilters HelloWorld/iOS \
---build-options --disk_cache="$HOME/helloworld-bazel-cache"
+--additionalSourceFilters HelloWorld\ submodules \
+--build-options \
+--disk_cache="$HOME/helloworld-bazel-cache"
 ```
 
 Generate `.xcodeproj`  
@@ -77,24 +78,29 @@ iOS
 
 `LaunchScreen.storyboard` is required to be configured, otherwise `UIScreen.main.bounds` and `windowScene.coordinateSpace.bounds` causes misbehavior for application.  
 
-Build the application  
+Build the iOS application  
 ```
 $ bazel build //HelloWorld/iOS:HelloWorld
 ```
 
-Run the application  
+Run the iOS application  
 ```
 $ bazel run //HelloWorld/iOS:HelloWorld
 ```
 
-Build the unit test
+Build the SharedKit unit test
 ```
-$ bazel build //HelloWorld/iOS:XCUnitTest
+$ bazel build //HelloWorld/SharedKit/XCTest:XCUnitTestSuite
 ```
 
-Run the unit test  
+Run the SharedKit unit test  
 ```
-$ bazel run //HelloWorld/iOS:XCUnitTest
+$ bazel test //HelloWorld/SharedKit/XCTest:XCUnitTestSuite
+```
+
+Build OSExtension  
+```
+$ bazel build //submodules/OSExtension:OSExtension
 ```
 
 Bazel
@@ -154,9 +160,13 @@ Documentation & Links
 [`Building with Bazel`](https://www.raywenderlich.com/31558158-building-with-bazel/)  
 [`ios_and_bazel_at_reddit_a_journey`](https://www.reddit.com/r/RedditEng/comments/syz5dw/ios_and_bazel_at_reddit_a_journey/)  
 [`migrating-ios-project-to-bazel-a-real-world-experience`](https://liuliu.me/eyes/migrating-ios-project-to-bazel-a-real-world-experience/)  
+<br/>
 [`google-mediapipe-examples-ios`](https://github.com/google/mediapipe/tree/master/mediapipe/examples/ios)  
 [`Telegram-iOS`](https://github.com/TelegramMessenger/Telegram-iOS)  
+[`liuliu/dflat`](https://github.com/liuliu/dflat)  
+[`wendyliga/simple_bazel`](https://github.com/wendyliga/simple_bazel)  
 [`TulsiGeneratorIntegrationTests`](https://github.com/bazelbuild/tulsi/tree/master/src/TulsiGeneratorIntegrationTests/Resources)  
+[`iOS Dynamic vs. Static Library / Framework`](https://gist.github.com/SheldonWangRJT/78c9bd3b98488487c59a6a4a9c35162c)  
 <br/>
 [`.imageset`](https://appicon.co/#image-sets)  
 <br/>

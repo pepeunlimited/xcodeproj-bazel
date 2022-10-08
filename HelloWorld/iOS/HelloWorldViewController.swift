@@ -8,6 +8,8 @@
 
 import Foundation
 import os
+import SharedKit
+import OSExtension
 import UIKit
 
 final class HelloWorldViewController: UIViewController {
@@ -92,9 +94,11 @@ final class HelloWorldViewController: UIViewController {
   // MARK: os_log
 
   func printLog() {
+
     let osActivityDTMode: String? = ProcessInfo.processInfo.environment["OS_ACTIVITY_DT_MODE"] as String?
     let variable1: String? = ProcessInfo.processInfo.environment["VARIABLE_1"] as String?
     let variable2: String? = ProcessInfo.processInfo.environment["VARIABLE_2"] as String?
+    let greeting: String = Haberdasher.shared.greeting
 
     os_log(">> OS_ACTIVITY_DT_MODE=%@",
            log: OSLog.viewCycle,
@@ -112,6 +116,10 @@ final class HelloWorldViewController: UIViewController {
            log: OSLog.viewCycle,
            type: .debug,
            Localization.primaryText)
+    os_log(">> Haberdasher.shared.greeting=%@",
+           log: OSLog.viewCycle,
+           type: .debug,
+           greeting)
   }
 }
 

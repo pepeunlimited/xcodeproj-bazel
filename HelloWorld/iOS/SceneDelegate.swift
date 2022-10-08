@@ -8,6 +8,7 @@
 
 import Foundation
 import os
+import OSExtension
 import UIKit
 
 @available(iOS 13.0, *)

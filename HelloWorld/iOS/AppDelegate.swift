@@ -8,6 +8,7 @@
 
 import Foundation
 import os
+import OSExtension
 import UIKit
 
 @objc(AppDelegate) class AppDelegate: UIResponder, UIApplicationDelegate {

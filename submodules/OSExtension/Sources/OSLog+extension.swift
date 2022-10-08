@@ -9,7 +9,7 @@
 import Foundation
 import os
 
-extension OSLog {
+public extension OSLog {
 
   private static var subsystem: String = Bundle.main.bundleIdentifier!
 
