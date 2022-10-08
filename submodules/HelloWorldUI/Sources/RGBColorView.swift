@@ -11,7 +11,7 @@ import os
 import UIKit
 import UIKitExtension
 
-final class RGBColorView: UIView {
+public final class RGBColorView: UIView {
 
   var columns: Int = 5
 
@@ -40,7 +40,7 @@ final class RGBColorView: UIView {
 
   // MARK: Initializer
 
-  override init(frame: CGRect) {
+  public override init(frame: CGRect) {
     super.init(frame: frame)
     configureView()
     addSubview(hStack)
@@ -98,7 +98,7 @@ final class RGBColorView: UIView {
 
 // MARK: RGBColorView+ComputedProperties
 
-extension RGBColorView {
+public extension RGBColorView {
 
   var rgbSize: CGSize {
     let width: CGFloat = contentViewSize.width / CGFloat(columns)
@@ -107,7 +107,7 @@ extension RGBColorView {
   }
 }
 
-extension RGBColorView {
+public extension RGBColorView {
 
   override var debugDescription: String {
     "RGBColorView rgbSize: \(rgbSize), columns: \(columns), rows: \(rows)"

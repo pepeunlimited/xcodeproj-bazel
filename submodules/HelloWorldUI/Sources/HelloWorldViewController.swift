@@ -13,7 +13,7 @@ import SharedKit
 import UIKit
 import UIKitExtension
 
-final class HelloWorldViewController: UIViewController {
+public final class HelloWorldViewController: UIViewController {
 
   let rgbColorView: RGBColorView = RGBColorView(frame: .zero,
                                                 translatesAutoresizingMaskIntoConstraints: false)
@@ -33,7 +33,7 @@ final class HelloWorldViewController: UIViewController {
 
   // MARK: viewDidLoad
 
-  override func viewDidLoad() {
+  public override func viewDidLoad() {
     super.viewDidLoad()
     printLog()
     configureView()
@@ -42,7 +42,7 @@ final class HelloWorldViewController: UIViewController {
     rgbColorView.start(true)
   }
 
-  override func viewDidLayoutSubviews() {
+  public override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     os_log(">> view=%@",
            log: OSLog.viewCycle,

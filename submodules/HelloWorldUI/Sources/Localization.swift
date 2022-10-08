@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Localization {
+public enum Localization {
 
   static let primaryText: String = NSLocalizedString("PRIMARY_TEXT", comment: "")
 }

@@ -68,6 +68,7 @@ swift_library(
         "//submodules/SharedKit:SharedKit",
         "//submodules/OSExtension:OSExtension",
         "//submodules/UIKitExtension:UIKitExtension",
+        "//submodules/HelloWorldUI:HelloWorldUI",
     ],
     visibility = ["//visibility:public"]
 )
