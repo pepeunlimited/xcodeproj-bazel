@@ -90,17 +90,27 @@ $ bazel run //HelloWorld/iOS:HelloWorld
 
 Build the `SharedKit` unit test
 ```
-$ bazel build //submodules/SharedKit:XCUnitTestSuite
+$ bazel build //submodules/SharedKit:SwiftXCTest
 ```
 
 Run the `SharedKit` unit test  
 ```
-$ bazel test //submodules/SharedKit:XCUnitTestSuite
+$ bazel test //submodules/SharedKit:SwiftXCTest
 ```
 
 Build `OSExtension`
 ```
 $ bazel build //submodules/OSExtension:OSExtension
+```
+
+Build the `HelloWorldUI` unit test
+```
+$ bazel build //submodules/HelloWorldUI:XCUnitTestSuite
+```
+
+Run the `HelloWorldUI` unit test  
+```
+$ bazel test //submodules/HelloWorldUI:XCUnitTestSuite
 ```
 
 Bazel

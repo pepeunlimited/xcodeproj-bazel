@@ -9,17 +9,9 @@
 import Foundation
 import XCTest
 
-final class HelloWorldXCTest: XCTestCase {
+public final class HelloWorldXCTest: XCTestCase {
 
-    override func setUpWithError() throws {
-
-    }
-
-    override func tearDownWithError() throws {
-
-    }
-
-    func testExample() throws {
-
+    public func testExample() throws {
+        XCTAssert(true)
     }
 }
