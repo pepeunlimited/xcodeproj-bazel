@@ -9,6 +9,7 @@
 import Foundation
 import os
 import UIKit
+import UIKitExtension
 
 final class RGBColorView: UIView {
 

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIColor {
+public extension UIColor {
 
   convenience init<T: BinaryInteger>(r: T, g: T, b: T, a: T = 255) {
     self.init(red: .init(r)/255,

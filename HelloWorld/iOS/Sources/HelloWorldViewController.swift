@@ -8,9 +8,10 @@
 
 import Foundation
 import os
-import SharedKit
 import OSExtension
+import SharedKit
 import UIKit
+import UIKitExtension
 
 final class HelloWorldViewController: UIViewController {
 

@@ -8,6 +8,7 @@
 
 load("@build_bazel_rules_apple//apple:ios.bzl",
     "ios_application",
+    "ios_framework"
 )
 
 load("@build_bazel_rules_apple//apple:versioning.bzl",
@@ -33,7 +34,7 @@ load("@build_bazel_rules_apple//apple:resources.bzl",
 objc_library(
     name = "Main",
     srcs = [
-        "main.m"
+        "Sources/main.m"
     ],
     visibility = ["//visibility:private"]
 )
@@ -46,7 +47,7 @@ objc_library(
 swift_library(
     name = "MainSwift",
     srcs = glob([
-        "Application.swift",
+        "Sources/Application.swift",
     ]),
     visibility = ["//visibility:private"]
 )
@@ -61,19 +62,12 @@ swift_library(
 swift_library(
     name = "Lib",
     srcs = glob([
-        "SceneDelegate.swift",
-        "AppDelegate.swift",
-        "Localization.swift",
-        "HelloWorldViewController.swift",
-        "RGBColorView.swift",
-        "OSLog+extension.swift",
-        "UIStackView+extension.swift",
-        "UIView+extension.swift",
-        "UIColor+extension.swift"
+        "Sources/*.swift"
     ]),
     deps = [
         "//submodules/SharedKit:SharedKit",
-        "//submodules/OSExtension:OSExtension"
+        "//submodules/OSExtension:OSExtension",
+        "//submodules/UIKitExtension:UIKitExtension",
     ],
     visibility = ["//visibility:public"]
 )
@@ -153,6 +147,46 @@ apple_bundle_version(
     short_version_string = "1",
 )
 
+# OPTIONAL
+###############################
+#### MARK: apple_bundle_version
+###############################
+
+apple_bundle_version(
+    name = "iOSFrameworkVersion",
+    build_version = "0.0.1",
+    short_version_string = "1",
+)
+
+# OPTIONAL
+########################
+#### MARK: ios_framework
+########################
+
+# reduce size of the ios binary
+# @see https://github.com/bazelbuild/rules_apple/blob/master/doc/frameworks.md
+
+ios_framework(
+    name = "iOSFramework",
+    bundle_id = "com.pepeunlimited.ios.framework",
+    bundle_name = "iOSFramework",
+    families = [
+        "iphone",
+        "ipad",
+    ],
+    infoplists = [
+        "infoplists/HelloWorldiOSFrameworkInfo.plist",
+    ],
+    frameworks = [],
+    minimum_os_version = "12.0",
+    version = ":iOSFrameworkVersion",
+    extension_safe = True,
+    deps = [
+        ":Lib",
+    ],
+    visibility = ["//visibility:public"]
+)
+
 # REQUIRED
 ##########################
 #### MARK: ios_application
@@ -196,8 +230,8 @@ ios_application(
         "ipad"
     ],
     infoplists = [
-        "Info.plist",
-        "HelloWorldInfo.plist"
+        "infoplists/Info.plist",
+        "infoplists/HelloWorldInfo.plist"
     ],
     resources = [
         ":Assets",
@@ -211,8 +245,7 @@ ios_application(
         ":FinnishStrings"
     ],
     frameworks = [
-#        "//submodules/SharedKit:SharedKitFramework",
-#        "//submodules/OSExtension:OSExtensionFramework"
+        ":iOSFramework"
     ],
     deps = [
         ":Main",

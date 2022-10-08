@@ -17,10 +17,10 @@ load("@build_bazel_rules_swift//swift:swift.bzl",
 
 # module_name is required
 swift_library(
-    name = "OSExtension",
-    module_name = "OSExtension",
+    name = "UIKitExtension",
+    module_name = "UIKitExtension",
     srcs = glob([
-        "Sources/OSLog+extension.swift",
+        "Sources/*.swift",
     ]),
     visibility = ["//visibility:public"]
 )

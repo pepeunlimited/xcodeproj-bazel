@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIView {
+public extension UIView {
 
   convenience init(frame: CGRect,
                    translatesAutoresizingMaskIntoConstraints: Bool = false) {

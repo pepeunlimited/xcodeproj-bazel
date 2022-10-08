@@ -6,13 +6,13 @@
 #  See AUTHORS file for the list of project authors.
 #
 
-load("@build_bazel_rules_apple//apple:ios.bzl",
-    "ios_framework",
-)
+#load("@build_bazel_rules_apple//apple:ios.bzl",
+#    "ios_framework",
+#)
 
-load("@build_bazel_rules_apple//apple:versioning.bzl",
-     "apple_bundle_version",
-)
+#load("@build_bazel_rules_apple//apple:versioning.bzl",
+#     "apple_bundle_version",
+#)
 
 load("@build_bazel_rules_swift//swift:swift.bzl",
     "swift_library",
@@ -38,34 +38,34 @@ swift_library(
 #### MARK: apple_bundle_version
 ###############################
 
-apple_bundle_version(
-    name = "SharedKitFrameworkVersion",
-    build_version = "0.0.1",
-    short_version_string = "1",
-)
+#apple_bundle_version(
+#    name = "SharedKitFrameworkVersion",
+#    build_version = "0.0.1",
+#    short_version_string = "1",
+#)
 
 # OPTIONAL
 ########################
 #### MARK: ios_framework
 ########################
 
-ios_framework(
-    name = "SharedKitFramework",
-    bundle_id = "com.pepeunlimited.sharedkit",
-    bundle_name = "SharedKit",
-    families = [
-        "iphone",
-        "ipad",
-    ],
-    infoplists = [
-        "Info.plist",
-    ],
-    frameworks = [],
-    minimum_os_version = "12.0",
-    version = ":SharedKitFrameworkVersion",
-    extension_safe = True,
-    deps = [
-        ":SharedKit",
-    ],
-    visibility = ["//visibility:public"]
-)
+#ios_framework(
+#    name = "SharedKitFramework",
+#    bundle_id = "com.pepeunlimited.sharedkit",
+#    bundle_name = "SharedKit",
+#    families = [
+#        "iphone",
+#        "ipad",
+#    ],
+#    infoplists = [
+#        "Info.plist",
+#    ],
+#    frameworks = [],
+#    minimum_os_version = "12.0",
+#    version = ":SharedKitFrameworkVersion",
+#    extension_safe = True,
+#    deps = [
+#        ":SharedKit",
+#    ],
+#    visibility = ["//visibility:public"]
+#)
