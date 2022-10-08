@@ -6,16 +6,18 @@
 #  See AUTHORS file for the list of project authors.
 #
 
-#load("@build_bazel_rules_apple//apple:ios.bzl",
-#    "ios_framework",
-#)
-
 #load("@build_bazel_rules_apple//apple:versioning.bzl",
 #     "apple_bundle_version",
 #)
 
+load("@build_bazel_rules_apple//apple:ios.bzl",
+    "ios_unit_test"
+#   "ios_framework",
+)
+
 load("@build_bazel_rules_swift//swift:swift.bzl",
     "swift_library",
+    "swift_test"
 )
 
 # REQUIRED
@@ -33,7 +35,59 @@ swift_library(
     visibility = ["//visibility:public"]
 )
 
-# REQUIRED
+# OPTIONAL
+################################
+#### MARK: Environment Variables
+################################
+
+helloworld_env = {
+  "VARIABLE_1": "Something1",
+  "VARIABLE_2": "Something2",
+}
+
+# OPTIONAL
+########################
+#### MARK: swift_test
+########################
+
+swift_test(
+    name = "XCUnitLib",
+    srcs = glob([
+        "XCTest/HelloWorldXCTest.swift"
+    ]),
+#    srcs = glob(["**/*.swift"]),
+#    srcs = glob(["src/*.swift"]),
+    visibility = ["//visibility:public"]
+)
+
+# OPTIONAL
+########################
+#### MARK: ios_unit_test
+########################
+
+ios_unit_test(
+    name = "XCUnitTest",
+    deps = [
+        ":XCUnitLib"
+    ],
+    platform_type = "ios",
+    minimum_os_version = "12.0",
+)
+
+# OPTIONAL
+########################
+#### MARK: test_suite
+########################
+
+test_suite(
+    name = "XCUnitTestSuite",
+    tests = [
+        ":XCUnitTest"
+    ],
+)
+
+
+# OPTIONAL
 ###############################
 #### MARK: apple_bundle_version
 ###############################

@@ -78,27 +78,27 @@ iOS
 
 `LaunchScreen.storyboard` is required to be configured, otherwise `UIScreen.main.bounds` and `windowScene.coordinateSpace.bounds` causes misbehavior for application.  
 
-Build the iOS application  
+Build the `iOS` application  
 ```
 $ bazel build //HelloWorld/iOS:HelloWorld
 ```
 
-Run the iOS application  
+Run the `iOS` application  
 ```
 $ bazel run //HelloWorld/iOS:HelloWorld
 ```
 
-Build the SharedKit unit test
+Build the `SharedKit` unit test
 ```
-$ bazel build //HelloWorld/SharedKit/XCTest:XCUnitTestSuite
-```
-
-Run the SharedKit unit test  
-```
-$ bazel test //HelloWorld/SharedKit/XCTest:XCUnitTestSuite
+$ bazel build //submodules/SharedKit:XCUnitTestSuite
 ```
 
-Build OSExtension  
+Run the `SharedKit` unit test  
+```
+$ bazel test //submodules/SharedKit:XCUnitTestSuite
+```
+
+Build `OSExtension`
 ```
 $ bazel build //submodules/OSExtension:OSExtension
 ```
