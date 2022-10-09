@@ -1,5 +1,5 @@
 //
-//  HelloWorldXCTest.swift
+//  RGBColorViewXCTest.swift
 //
 //  Copyright 2022 Pepe Unlimited
 //  Licensed under the MIT license, see associated LICENSE file for terms.

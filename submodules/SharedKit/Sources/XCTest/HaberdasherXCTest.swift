@@ -1,5 +1,5 @@
 //
-//  HelloWorldXCTest.swift
+//  HaberdasherXCTest.swift
 //
 //  Copyright 2022 Pepe Unlimited
 //  Licensed under the MIT license, see associated LICENSE file for terms.
@@ -10,7 +10,7 @@ import Foundation
 import SharedKit
 import XCTest
 
-final class HelloWorldXCTest: XCTestCase {
+final class HaberdasherXCTest: XCTestCase {
 
   func testExample() throws {
     let greeting: String = Haberdasher.shared.greeting
