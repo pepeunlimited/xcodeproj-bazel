@@ -148,6 +148,29 @@ View the log stream on console
 ```
 $ xcrun simctl spawn '5A709945-ED74-45F3-A248-AA289FE92497' log stream --debug --predicate 'subsystem == "com.pepeunlimited.helloworld"'
 ```
+
+VSCode
+------
+
+Edit your `settings.json` and add below arguments for `vscode-swift` extension  
+
+show-sdk-path  
+```
+$ xcrun --sdk iphonesimulator --show-sdk-path
+```
+<br/>
+```
+  "swift.buildArguments": [
+    "--arch",
+    "x86_64",
+    "-Xswiftc",
+    "-target",
+    "-Xswiftc",
+    "x86_64-apple-ios16.0-simulator"
+  ],
+  "swift.SDK": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
+```
+
 Swift
 -----
 
