@@ -88,12 +88,12 @@ Run the `iOS` application
 $ bazel run //HelloWorld/iOS:HelloWorld
 ```
 
-Build the `SharedKit` unit test
+Build the `SharedKit` swift_test
 ```
 $ bazel build //submodules/SharedKit:SwiftXCTest
 ```
 
-Run the `SharedKit` unit test  
+Run the `SharedKit` swift_test  
 ```
 $ bazel test //submodules/SharedKit:SwiftXCTest
 ```
@@ -103,12 +103,12 @@ Build `OSExtension`
 $ bazel build //submodules/OSExtension:OSExtension
 ```
 
-Build the `HelloWorldUI` unit test
+Build the `HelloWorldUI` ios_unit_test  
 ```
 $ bazel build //submodules/HelloWorldUI:XCUnitTestSuite
 ```
 
-Run the `HelloWorldUI` unit test  
+Run the `HelloWorldUI` ios_unit_test  
 ```
 $ bazel test //submodules/HelloWorldUI:XCUnitTestSuite
 ```

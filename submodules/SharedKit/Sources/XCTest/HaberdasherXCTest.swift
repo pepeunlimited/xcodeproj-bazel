@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import SharedKit
 import XCTest
 
-public final class HelloWorldXCTest: XCTestCase {
+final class HelloWorldXCTest: XCTestCase {
 
-    public func testExample() throws {
-        XCTAssert(true)
-    }
+  func testExample() throws {
+    let greeting: String = Haberdasher.shared.greeting
+    XCTAssertEqual(greeting, "Hola")
+  }
 }

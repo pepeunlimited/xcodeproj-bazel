@@ -44,7 +44,10 @@ swift_test(
     srcs = glob([
         "Sources/XCTest/*.swift"
     ]),
-    visibility = ["//visibility:public"]
+    deps = [
+        ":SharedKit",
+    ],
+    visibility = ["//visibility:private"]
 )
 
 # OPTIONAL

@@ -13,11 +13,11 @@ import UIKitExtension
 
 public final class RGBColorView: UIView {
 
-  var columns: Int = 5
+  public var columns: Int = 5
 
-  var rows: Int = 10
+  public var rows: Int = 10
 
-  var contentViewSize: CGSize = .zero
+  public var contentViewSize: CGSize = .zero
 
   let hStack: UIStackView = UIStackView(frame: .zero,
                                         axis: .horizontal,
@@ -29,7 +29,7 @@ public final class RGBColorView: UIView {
                                         alignment: .leading,
                                         distribution: .fill)
 
-  var schemes: [UIColor] = [
+  public var schemes: [UIColor] = [
     UIColor.bblue,
     UIColor.wwhite,
     UIColor.bblack,
@@ -65,7 +65,7 @@ public final class RGBColorView: UIView {
 
   // MARK: Domain
 
-  func start(_ animated: Bool) {
+  public func start(_ animated: Bool) {
     for _ in 0...rows - 1 {
       let hStack: UIStackView = UIStackView(frame: .zero, axis: .horizontal)
       vStack.addArrangedSubview(hStack)

@@ -23,7 +23,4 @@ public final class Haberdasher {
     "inches: \(size), color: invisible, name: bowler"
   }
 
-  // let variable2: String? = ProcessInfo.processInfo.environment["VARIABLE_2"] as String?
-
-
 }

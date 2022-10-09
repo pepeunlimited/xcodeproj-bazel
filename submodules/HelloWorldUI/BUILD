@@ -60,7 +60,10 @@ swift_library(
     ]),
     testonly = True,
 #    srcs = glob(["**/*.swift"]),
-    visibility = ["//visibility:public"]
+    deps = [
+        ":HelloWorldUI"
+    ],
+    visibility = ["//visibility:private"]
 )
 
 # OPTIONAL
@@ -75,7 +78,8 @@ ios_unit_test(
     ],
     env = helloworld_env,
     platform_type = "ios",
-    minimum_os_version = "12.0"
+    minimum_os_version = "12.0",
+    visibility = ["//visibility:private"]
 )
 
 # OPTIONAL

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
-<key>CFBundleName</key>					inherited @ HelloWorld/SharedKit/BUILD bundle_name
-<key>CFBundleIdentifier</key>			inherited @ HelloWorld/SharedKit/BUILD bundle_id
-<key>CFBundleShortVersionString</key>	inherited @ HelloWorld/SharedKit/BUILD build_version
-<key>CFBundleVersion</key>				inherited @ HelloWorld/SharedKit/BUILD short_version_string
+<key>CFBundleName</key>					inherited @ HelloWorld/iOS/BUILD:iOSFramework bundle_name
+<key>CFBundleIdentifier</key>			inherited @ HelloWorld/iOS/BUILD:iOSFramework bundle_id
+<key>CFBundleShortVersionString</key>	inherited @ HelloWorld/iOS/BUILD:iOSFramework build_version
+<key>CFBundleVersion</key>				inherited @ HelloWorld/iOS/BUILD:iOSFramework short_version_string
 -->
 <plist version="1.0">
 <dict>
@@ -16,8 +16,6 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
-    <key>CFBundleVersion</key>
-    <string>{buildNumber}</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

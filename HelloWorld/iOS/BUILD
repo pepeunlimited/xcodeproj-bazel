@@ -93,8 +93,8 @@ helloworld_env = {
 filegroup(
     name = "EnglishStrings",
     srcs = [
-        "en.lproj/Localizable.strings",
-        "en.lproj/InfoPlist.strings",
+        "lprojs/en.lproj/Localizable.strings",
+        "lprojs/en.lproj/InfoPlist.strings",
     ]
 )
 
@@ -103,8 +103,8 @@ filegroup(
 filegroup(
     name = "FinnishStrings",
     srcs = [
-        "fi.lproj/Localizable.strings",
-        "fi.lproj/InfoPlist.strings",
+        "lprojs/fi.lproj/Localizable.strings",
+        "lprojs/fi.lproj/InfoPlist.strings",
     ]
 )
 
@@ -114,7 +114,7 @@ filegroup(
 #####################
 filegroup(
     name = "LaunchIcon",
-    srcs = glob(["LaunchIcon.xcassets/**"])
+    srcs = glob(["xcassets/LaunchIcon.xcassets/**"])
 )
 
 # OPTIONAL
@@ -124,7 +124,7 @@ filegroup(
 
 filegroup(
     name = "Assets",
-    srcs = glob(["Assets.xcassets/**"]),
+    srcs = glob(["xcassets/Assets.xcassets/**"]),
 )
 
 # OPTIONAL
@@ -134,7 +134,7 @@ filegroup(
 
 filegroup(
     name = "ColorAssets",
-    srcs = glob(["ColorAssets.xcassets/**"]),
+    srcs = glob(["xcassets/ColorAssets.xcassets/**"]),
 )
 
 # REQUIRED
