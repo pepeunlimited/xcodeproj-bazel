@@ -160,6 +160,7 @@ $ xcrun --sdk iphonesimulator --show-sdk-path
 ```
 <br/>
 `arm64` or `x86_64`  
+
 ```
   "swift.buildArguments": [
     "--arch",
