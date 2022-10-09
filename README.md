@@ -163,15 +163,15 @@ $ xcrun --sdk iphonesimulator --show-sdk-path
 `arm64` or `x86_64`  
 
 ```
-  "swift.buildArguments": [
-    "--arch",
-    "x86_64",
-    "-Xswiftc",
-    "-target",
-    "-Xswiftc",
-    "x86_64-apple-ios16.0-simulator"
-  ],
-  "swift.SDK": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
+"swift.buildArguments": [
+  "--arch",
+  "x86_64",
+  "-Xswiftc",
+  "-target",
+  "-Xswiftc",
+  "x86_64-apple-ios16.0-simulator"
+],
+"swift.SDK": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
 ```
 
 Swift
