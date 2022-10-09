@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
-HelloWorldInfo.plist extends the .plist for the iOS application.
+HelloWorldInfo.plist extends the .plist for the iOS application. 
+@see lprojs/xx.lproj/InfoPlist.strings
 - <key>CFBundleDisplayName</key>
 - <key>UIApplicationSceneManifest</key>
 -->
