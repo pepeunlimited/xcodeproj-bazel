@@ -88,6 +88,9 @@ Run the `iOS` application
 $ bazel run //HelloWorld/iOS:HelloWorld
 ```
 
+submodules
+----------
+
 Build the `SharedKit` swift_test
 ```
 $ bazel build //submodules/SharedKit:SwiftXCTest
