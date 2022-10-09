@@ -158,7 +158,9 @@ show-sdk-path
 ```
 $ xcrun --sdk iphonesimulator --show-sdk-path
 ```
+
 <br/>
+
 ```
   "swift.buildArguments": [
     "--arch",
