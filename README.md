@@ -88,6 +88,13 @@ Run the `iOS` application
 $ bazel run //HelloWorld/iOS:HelloWorld
 ```
 
+macOS
+-----
+
+```
+TODO
+```
+
 submodules
 ----------
 
