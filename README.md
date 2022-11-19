@@ -178,7 +178,7 @@ $ xcrun --sdk iphonesimulator --show-sdk-path
   "-Xswiftc",
   "-target",
   "-Xswiftc",
-  "x86_64-apple-ios16.0-simulator"
+  "x86_64-apple-ios16.1-simulator"
 ],
 "swift.SDK": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
 ```
