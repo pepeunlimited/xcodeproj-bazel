@@ -161,7 +161,6 @@ show-sdk-path
 ```
 $ xcrun --sdk iphonesimulator --show-sdk-path
 ```
-<br/>
 
 `arm64` or `x86_64`  
 
@@ -176,6 +175,10 @@ $ xcrun --sdk iphonesimulator --show-sdk-path
 ],
 "swift.SDK": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
 ```
+<br/>
+<br/>
+
+> Inspect Editor Tokens and Scopes
 
 Swift
 -----
