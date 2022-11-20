@@ -187,6 +187,13 @@ $ xcrun --sdk iphonesimulator --show-sdk-path
 
 > Inspect Editor Tokens and Scopes
 
+swiftlint
+---------
+
+```
+$ brew install swiftlint
+```
+
 Swift
 -----
 
