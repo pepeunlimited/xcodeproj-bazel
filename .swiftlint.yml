@@ -18,6 +18,7 @@ opt_in_rules:
   - unused_import
   - yoda_condition
   - vertical_parameter_alignment_on_call
+  - indentation_width
 force_cast: warning
 force_try: warning
 legacy_hashing: error
