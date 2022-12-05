@@ -24,7 +24,7 @@ import UIKit
     guard let windowScene = scene as? UIWindowScene else { return }
     window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     window?.windowScene = windowScene
-    window?.rootViewController = HelloWorldViewController()
+    window?.rootViewController = MainCoordinator.shared.showLandingView()
     window?.makeKeyAndVisible()
   }
 

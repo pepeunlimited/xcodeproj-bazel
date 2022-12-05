@@ -27,6 +27,10 @@ swift_library(
         "Sources/HelloWorldViewController.swift",
         "Sources/RGBColorView.swift",
         "Sources/Localization.swift",
+        "Sources/WhatsNewViewController.swift",
+        "Sources/FeedViewController.swift",
+        "Sources/FeedViewDelegate.swift",
+        "Sources/TestViewController.swift",
     ]),
     deps = [
         "//submodules/SharedKit:SharedKit",

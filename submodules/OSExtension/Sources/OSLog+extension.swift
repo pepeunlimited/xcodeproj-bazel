@@ -20,4 +20,8 @@ public extension OSLog {
   static let viewCycle: OSLog = OSLog(subsystem: subsystem, category: "viewCycle")
 
   static let rgbView: OSLog = OSLog(subsystem: subsystem, category: "rgbView")
+
+  static let coordinator: OSLog = OSLog(subsystem: subsystem, category: "coordinator")
+
+  static let tableView: OSLog = OSLog(subsystem: subsystem, category: "tableView")
 }

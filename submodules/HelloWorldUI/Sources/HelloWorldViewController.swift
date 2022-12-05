@@ -35,16 +35,22 @@ public final class HelloWorldViewController: UIViewController {
 
   public override func viewDidLoad() {
     super.viewDidLoad()
+    os_log("HelloWorldViewControllers.swift >> viewDidLoad",
+           log: OSLog.viewCycle,
+           type: .debug)
     printLog()
     configureView()
     configureScrollView()
     configureRGBColorView()
+    configureNavigationBar()
     rgbColorView.start(true)
   }
 
+  // MARK: viewDidLayoutSubviews
+
   public override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    os_log(">> view=%@",
+    os_log("HelloWorldViewControllers.swift >> viewDidLayoutSubviews >> view=%@",
            log: OSLog.viewCycle,
            type: .debug,
            String(describing: view.frame.size))
@@ -53,7 +59,7 @@ public final class HelloWorldViewController: UIViewController {
   // MARK: Configure
 
   func configureView() {
-    view.translatesAutoresizingMaskIntoConstraints = false
+    // view.translatesAutoresizingMaskIntoConstraints = false // FIXES position and size are ambiguous. DO NOT UNCOMMENT
     view.backgroundColor = backgroundColor
   }
 
@@ -67,6 +73,7 @@ public final class HelloWorldViewController: UIViewController {
       scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
       scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
       scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+
       // contentView
       // contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
       // contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
@@ -90,6 +97,10 @@ public final class HelloWorldViewController: UIViewController {
       // vertical scroll
       rgbColorView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor),
     ])
+  }
+
+  func configureNavigationBar() {
+    title = "Hello World"
   }
 
   // MARK: os_log

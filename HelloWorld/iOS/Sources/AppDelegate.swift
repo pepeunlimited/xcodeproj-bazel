@@ -29,7 +29,7 @@ import UIKit
     } else {
       os_log(">> didFinishLaunchingWithOptions", log: OSLog.app, type: .debug)
       window = UIWindow(frame: UIScreen.main.bounds)
-      window?.rootViewController = HelloWorldViewController()
+      window?.rootViewController = MainCoordinator.shared.showLandingView()
       window?.makeKeyAndVisible()
     }
     return true
