@@ -194,6 +194,10 @@ swiftlint
 $ brew install swiftlint
 ```
 
+```
+¢ swiftlint lint submodules/HelloWorldUI/Sources/FeedViewController.swift --no-cache --fix --format
+```
+
 Swift
 -----
 

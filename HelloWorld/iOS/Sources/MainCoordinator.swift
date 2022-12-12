@@ -22,7 +22,7 @@ final class MainCoordinator {
   }()
 
   func showLandingView() -> UIViewController {
-    TestViewController()
+     feedVC
   }
 
   var feedVC: UIViewController {
