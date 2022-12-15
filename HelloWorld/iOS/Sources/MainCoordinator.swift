@@ -22,14 +22,26 @@ final class MainCoordinator {
   }()
 
   func showLandingView() -> UIViewController {
-     feedVC
+    navigationController = UINavigationController(rootViewController: pageViewController)
+    return navigationController!
   }
 
   var feedVC: UIViewController {
     let feedVC = FeedViewController()
     feedVC.delegate = self
-    navigationController = UINavigationController(rootViewController: feedVC)
-    return navigationController!
+    return feedVC
+  }
+
+  var pageViewController: UIViewController {
+    let vc: PageViewController = PageViewController()
+    let onboardingVC0 = OnBoardingViewController()
+    onboardingVC0.view.backgroundColor = .red
+    let onboardingVC1 = OnBoardingViewController()
+    onboardingVC1.view.backgroundColor = .green
+    let onboardingVC2 = OnBoardingViewController()
+    onboardingVC2.view.backgroundColor = .blue
+    vc.viewControllers = [onboardingVC0, onboardingVC1, onboardingVC2]
+    return vc
   }
 }
 

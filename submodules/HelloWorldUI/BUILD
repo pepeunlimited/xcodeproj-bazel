@@ -31,7 +31,8 @@ swift_library(
         "Sources/FeedViewController.swift",
         "Sources/FeedViewDelegate.swift",
         "Sources/TestViewController.swift",
-        "Sources/InstructionsViewController.swift"
+        "Sources/PageViewController.swift",
+        "Sources/OnBoardingViewController.swift"
     ]),
     deps = [
         "//submodules/SharedKit:SharedKit",

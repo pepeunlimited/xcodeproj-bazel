@@ -138,7 +138,7 @@ public final class WhatsNewViewController: UIViewController {
   }
 
   func configureNavigationBar() {
-    title = "Spacer View"
+    title = "What's New"
   }
 
 }
