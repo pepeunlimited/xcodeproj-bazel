@@ -57,6 +57,7 @@ public final class PageViewController: UIViewController {
     pageViewController.didMove(toParent: self)
     // configure data source
     pageViewController.dataSource = self
+    // configure delegate
     pageViewController.delegate = self
   }
 
