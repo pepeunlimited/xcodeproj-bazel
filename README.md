@@ -168,6 +168,7 @@ xcrun --toolchain swift sourcekit-lsp --help
 <br/>
 [`how-coupled-is-sourcekit-lsp-to-spm`](https://forums.swift.org/t/how-coupled-is-sourcekit-lsp-to-swift-package-manager/35270/7)  
 [`export-compile-commands.json`](https://stackoverflow.com/questions/25444277/xcodebuild-generating-empty-compile-commands-json)
+[`vscode-env`](https://github.com/vknabel/vscode-swift-development-environment/blob/master/README.md)
 
 swiftlint
 ---------
