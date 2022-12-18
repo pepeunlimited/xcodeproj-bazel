@@ -159,33 +159,15 @@ View the log stream on console
 $ xcrun simctl spawn '5A709945-ED74-45F3-A248-AA289FE92497' log stream --debug --predicate 'subsystem == "com.pepeunlimited.helloworld"'
 ```
 
-VSCode
+SourceKit-LSP
 ------
 
-Edit your `settings.json` and add below arguments for `vscode-swift` extension  
-
-show-sdk-path  
 ```
-$ xcrun --sdk iphonesimulator --show-sdk-path
-```
-
-`arm64` or `x86_64`  
-
-```
-"swift.buildArguments": [
-  "--arch",
-  "x86_64",
-  "-Xswiftc",
-  "-target",
-  "-Xswiftc",
-  "x86_64-apple-ios16.1-simulator"
-],
-"swift.SDK": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
+xcrun --toolchain swift sourcekit-lsp --help
 ```
 <br/>
-<br/>
-
-> Inspect Editor Tokens and Scopes
+[`how-coupled-is-sourcekit-lsp-to-spm`](https://forums.swift.org/t/how-coupled-is-sourcekit-lsp-to-swift-package-manager/35270/7)  
+[`export-compile-commands.json`](https://stackoverflow.com/questions/25444277/xcodebuild-generating-empty-compile-commands-json)
 
 swiftlint
 ---------
