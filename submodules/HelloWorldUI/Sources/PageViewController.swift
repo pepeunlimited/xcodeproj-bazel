@@ -295,10 +295,10 @@ extension PageViewController: UIPageViewControllerDelegate {
                                  didFinishAnimating finished: Bool,
                                  previousViewControllers: [UIViewController],
                                  transitionCompleted completed: Bool) {
-    os_log("PageViewController+UIPageViewControllerDelegate.swift >> pageViewController: didFinishAnimating: %{bool}, currentViewController: %@",
+    os_log("PageViewController+UIPageViewControllerDelegate.swift >> pageViewController: didFinishAnimating: %{bool}",
            log: OSLog.viewCycle,
            type: .debug,
-           finished,
-           String(describing: currentViewController))
+           finished)
+    // do not call the self.currentViewController otherwise app will crash
   }
 }
