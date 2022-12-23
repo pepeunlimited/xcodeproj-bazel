@@ -34,9 +34,7 @@ public final class TestViewController: UIViewController {
     configureNavigationBar()
     // -------
     let hStack = UIStackView(frame: .zero, axis: .horizontal, alignment: .center, distribution: .fill)
-    hStack.translatesAutoresizingMaskIntoConstraints = false
     let vStack = UIStackView(frame: .zero, axis: .vertical, alignment: .leading, distribution: .fill)
-    vStack.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(hStack)
     NSLayoutConstraint.activate([
       hStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -58,8 +56,8 @@ public final class TestViewController: UIViewController {
     // ------- primaryTextLabel
     let primaryTextLabel = UILabel(frame: .zero, translatesAutoresizingMaskIntoConstraints: false)
     primaryTextLabel.text = primaryText
-    // primaryTextLabel.setContentHuggingPriority(.init(251), for: .horizontal)
-    // primaryTextLabel.setContentCompressionResistancePriority(.init(750), for: .horizontal)
+    primaryTextLabel.setContentHuggingPriority(.init(251), for: .horizontal)
+    primaryTextLabel.setContentCompressionResistancePriority(.init(750), for: .horizontal)
     contentView.addArrangedSubview(primaryTextLabel)
     // ------- secondaryTextLabel
     let secondaryTextLabel = UILabel(frame: .zero, translatesAutoresizingMaskIntoConstraints: false)

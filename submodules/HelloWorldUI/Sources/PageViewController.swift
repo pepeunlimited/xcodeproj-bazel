@@ -295,7 +295,7 @@ extension PageViewController: UIPageViewControllerDelegate {
                                  didFinishAnimating finished: Bool,
                                  previousViewControllers: [UIViewController],
                                  transitionCompleted completed: Bool) {
-    os_log("PageViewController+UIPageViewControllerDelegate.swift >> pageViewController: didFinishAnimating: %{bool}",
+    os_log("PageViewController+UIPageViewControllerDelegate.swift >> pageViewController: didFinishAnimating: %{bool}d",
            log: OSLog.viewCycle,
            type: .debug,
            finished)
