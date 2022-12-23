@@ -31,6 +31,12 @@ and licence agreements during first launch.
 $ /usr/bin/xcodebuild -version
 ```
 
+#### (OPTIONAL)  
+
+```
+$ sudo xcode-select -s /Applications/Xcode.app
+```
+
 Build and run [`Tulsi`](https://tulsi.bazel.build/)  
 ```
 $ (cd build-system/tulsi; sh build_and_run.sh -x 14.0)
