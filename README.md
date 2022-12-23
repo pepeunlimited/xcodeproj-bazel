@@ -36,6 +36,11 @@ $ /usr/bin/xcodebuild -version
 ```
 $ sudo xcode-select -s /Applications/Xcode.app
 ```
+If you still get error, try to agree license.  
+
+```
+$ sudo xcodebuild -license
+```
 
 Build and run [`Tulsi`](https://tulsi.bazel.build/)  
 ```
