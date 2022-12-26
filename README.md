@@ -55,6 +55,22 @@ $ bazel build //HelloWorld/iOS:HelloWorld
 Getting started
 ---------------
 
+```
+$ which bazel
+```
+
+Since Homebrew v3.0.0, the default prefix is different depending on the chip architecture. The defaults are the following:
+
+on Apple silicon
+```
+/opt/homebrew
+```
+
+on Intel
+```
+/usr/local
+```
+
 Generate `.tulsiproj`  
 ```
 $ sh build-system/generate-xcodeproj.sh \
