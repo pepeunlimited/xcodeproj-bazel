@@ -1,5 +1,5 @@
 #
-#  WORKSP
+#  WORKSPACE
 #
 #  Copyright 2022 Pepe Unlimited
 #  Licensed under the MIT license, see associated LICENSE file for terms.
@@ -29,6 +29,13 @@ http_archive(
     url = "https://github.com/bazelbuild/apple_support/releases/download/1.3.2/apple_support.1.3.2.tar.gz",
 )
 
+# https://github.com/buildbuddy-io/rules_xcodeproj/releases
+http_archive(
+    name = "com_github_buildbuddy_io_rules_xcodeproj",
+    sha256 = "2533b977ac8540a30323fde7fdb6ca49219edd21d3753b69d43f39c576b11a88",
+    url = "https://github.com/buildbuddy-io/rules_xcodeproj/releases/download/0.11.0/release.tar.gz",
+)
+
 http_archive(
     name = "bazel_skylib",
     sha256 = "74d544d96f4a5bb630d465ca8bbcfe231e3594e5aae57e1edbf17a6eb3ca2506",
@@ -55,6 +62,13 @@ load(
 )
 
 apple_support_dependencies()
+
+load(
+    "@com_github_buildbuddy_io_rules_xcodeproj//xcodeproj:repositories.bzl",
+    "xcodeproj_rules_dependencies",
+)
+
+xcodeproj_rules_dependencies()
 
 load(
     "@bazel_skylib//:workspace.bzl",

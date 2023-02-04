@@ -23,6 +23,12 @@ load("@build_bazel_rules_apple//apple:resources.bzl",
     "apple_resource_group"
 )
 
+load(
+    "@com_github_buildbuddy_io_rules_xcodeproj//xcodeproj:defs.bzl",
+    "top_level_target",
+    "xcodeproj",
+)
+
 # REQUIRED
 ########################
 #### MARK: objc_library
@@ -254,4 +260,17 @@ ios_application(
         ":Lib",
     ],
     visibility = ["//visibility:public"]
+)
+
+# OPTIONAL
+####################
+#### MARK: xcodeproj
+####################
+xcodeproj(
+    name = "xcodeproj",
+    project_name = "helloworld-ios",
+    tags = ["manual"],
+    top_level_targets = [
+        top_level_target(":HelloWorld", target_environments = ["simulator"]),
+    ],
 )

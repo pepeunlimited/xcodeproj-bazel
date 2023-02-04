@@ -1,0 +1,9 @@
+############################
+#### MARK: xcodeproj.bazelrc
+############################
+
+# SEE MORE AT:
+# @see https://github.com/buildbuddy-io/rules_xcodeproj/blob/main/docs/usage.md#bazelrc-files
+
+# Enabling archived bundles for fixture coverage
+build:rules_xcodeproj --define=apple.experimental.tree_artifact_outputs=0

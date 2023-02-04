@@ -69,7 +69,9 @@ on Apple silicon
 on Intel
 ```
 /usr/local
-```
+
+Tulsi
+-----
 
 Generate `.tulsiproj`  
 ```
@@ -104,6 +106,17 @@ iOS
 ---
 
 `LaunchScreen.storyboard` is required to be configured, otherwise `UIScreen.main.bounds` and `windowScene.coordinateSpace.bounds` causes misbehavior for application.  
+
+```
+
+rules_xcodeproj
+---------------
+
+Generate `.xcodeproj`
+
+```
+$ bazel run //HelloWorld/iOS:xcodeproj
+```
 
 Build the `iOS` application  
 ```
@@ -225,6 +238,7 @@ Documentation & Links
 [`bazelbuild/apple_support`](https://github.com/bazelbuild/apple_support/tree/master/doc)  
 [`bazelbuild/bazel-skylib`](https://github.com/bazelbuild/bazel-skylib/tree/main/docs)  
 [`bazel.build/command-line-reference`](https://bazel.build/reference/command-line-reference)  
+[`buildbuddy-io/rules_xcodeproj`](https://github.com/buildbuddy-io/rules_xcodeproj/tree/main/docs)
 <br/>
 [`Bazel Tutorial: Build an iOS App`](https://bazel.build/tutorials/ios-app)  
 [`Migrating from Xcode to Bazel`](https://bazel.build/migrate/xcode)  
