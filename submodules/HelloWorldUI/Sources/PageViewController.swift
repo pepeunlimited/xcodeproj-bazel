@@ -41,6 +41,24 @@ public final class PageViewController: UIViewController {
     configureControls()
   }
 
+  public override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    guard navigationItem.leftBarButtonItem == nil else { return }
+    navigationItem.leftBarButtonItem = UIBarButtonItem(self,
+                                                       action: #selector(tap),
+                                                       titles: [.normal: "HelloWorld!"])
+    navigationItem.rightBarButtonItem = UIBarButtonItem(self,
+                                                        action: #selector(tap),
+                                                        type: .custom,
+                                                        rendering: .alwaysOriginal,
+                                                        fixedSize: CGSize(width: 24, height: 24),
+                                                        names: [.normal: "bazel"])
+  }
+
+  @objc func tap(_ sender: UIButton) {
+    fatalError()
+  }
+
   // MARK: UIPageViewController: Setup the child view controller
 
   func configureUIPageViewController() {

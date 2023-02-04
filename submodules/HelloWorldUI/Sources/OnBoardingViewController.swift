@@ -73,7 +73,7 @@ public final class OnBoardingViewController: UIViewController {
 
   func configrureHeader() {
     // https://stackoverflow.com/questions/59064207/horizontal-uistackview-with-two-label-one-multiline-label-one-one-line
-   let primaryTextLabel: UILabel = UILabel(frame: .zero, translatesAutoresizingMaskIntoConstraints: false)
+    let primaryTextLabel: UILabel = UILabel(frame: .zero, translatesAutoresizingMaskIntoConstraints: false)
     primaryTextLabel.text = "primaryText"
     let secondaryTextLabel = UILabel(frame: .zero, translatesAutoresizingMaskIntoConstraints: false)
     secondaryTextLabel.text = "secondaryText"
