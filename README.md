@@ -69,6 +69,7 @@ on Apple silicon
 on Intel
 ```
 /usr/local
+```
 
 Tulsi
 -----
@@ -107,12 +108,9 @@ iOS
 
 `LaunchScreen.storyboard` is required to be configured, otherwise `UIScreen.main.bounds` and `windowScene.coordinateSpace.bounds` causes misbehavior for application.  
 
-```
+[`rules_xcodeproj`](https://github.com/buildbuddy-io/rules_xcodeproj)
 
-rules_xcodeproj
----------------
-
-Generate `.xcodeproj`
+Generate `.xcodeproj` using the buildbuddy-io/rules_xcodeproj 
 
 ```
 $ bazel run //HelloWorld/iOS:xcodeproj
