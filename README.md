@@ -42,11 +42,6 @@ If you still get error, try to agree license.
 $ sudo xcodebuild -license
 ```
 
-Build and run [`Tulsi`](https://tulsi.bazel.build/)  
-```
-$ (cd build-system/tulsi; sh build_and_run.sh -x 14.0)
-```
-
 Test that bazel should be able to build iOS project with the Bazel
 ```
 $ bazel build //HelloWorld/iOS:HelloWorld
@@ -71,38 +66,6 @@ on Intel
 /usr/local
 ```
 
-Tulsi
------
-
-Generate `.tulsiproj`  
-```
-$ sh build-system/generate-xcodeproj.sh \
---verbose \
---bazel /usr/local/bin/bazel \
---target HelloWorld/iOS:HelloWorld \
---outputfolder build-input/gen/project \
---create-tulsiproj HelloWorld.tulsiproj \
---workspaceroot ./ \
---additionalSourceFilters HelloWorld\ submodules \
---build-options \
---disk_cache="$HOME/helloworld-bazel-cache"
-```
-
-Generate `.xcodeproj`  
-```
-$ sh build-system/generate-xcodeproj.sh \
---verbose \
---genconfig build-input/gen/project/HelloWorld.tulsiproj:HelloWorld \
---bazel /usr/local/bin/bazel \
---outputfolder build-input/gen/project \
---no-open-xcode
-```
-
-Open the `Xcode`
-```
-$ open $SRCROOT/xcodeproj-bazel/build-input/gen/project/HelloWorld.xcodeproj
-```
-
 iOS
 ---
 
@@ -114,6 +77,11 @@ Generate `.xcodeproj` using the buildbuddy-io/rules_xcodeproj
 
 ```
 $ bazel run //HelloWorld/iOS:xcodeproj
+```
+
+Open the `Xcode`
+```
+$ open $SRCROOT/HelloWorld/iOS/helloworld-ios.xcodeproj
 ```
 
 Build the `iOS` application  
