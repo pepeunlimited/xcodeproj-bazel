@@ -1,7 +1,8 @@
 xcodeproj-bazel
 ---------------
 
-Minimal setup for `.xcodeproj` with the [`bazel build system`](https://bazel.build/)  
+Minimal setup for `.xcodeproj` with the [`bazel build system`](https://bazel.build/). Xcode project
+is generated using [`rules_xcodeproj`](https://github.com/buildbuddy-io/rules_xcodeproj)
 
 Prerequisites
 -------------
