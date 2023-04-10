@@ -100,3 +100,5 @@ bazel-testlogs/
 bazel-testlogs
 bazel-xcodeproj-bazel
 bazel-xcodeproj-bazel/
+HelloWorld/iOS/helloworld-ios.xcodeproj
+.DS_Store
