@@ -11,35 +11,36 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 # https://github.com/bazelbuild/rules_apple/releases
 http_archive(
     name = "build_bazel_rules_apple",
-    sha256 = "43737f28a578d8d8d7ab7df2fb80225a6b23b9af9655fcdc66ae38eb2abcf2ed",
-    url = "https://github.com/bazelbuild/rules_apple/releases/download/2.0.0/rules_apple.2.0.0.tar.gz",
+    sha256 = "20da675977cb8249919df14d0ce6165d7b00325fb067f0b06696b893b90a55e8",
+    url = "https://github.com/bazelbuild/rules_apple/releases/download/3.0.0/rules_apple.3.0.0.tar.gz",
 )
 
 # https://github.com/bazelbuild/rules_swift/releases
 http_archive(
     name = "swift_rules_dependencies",
-    sha256 = "32f95dbe6a88eb298aaa790f05065434f32a662c65ec0a6aabdaf6881e4f169f",
-    url = "https://github.com/bazelbuild/rules_swift/releases/download/1.5.0/rules_swift.1.5.0.tar.gz",
+    sha256 = "abbc41234c37031bc2c561a80fe8a2f8d95efcbbf2a2cb61be0b7201b5dd01a9",
+    url = "https://github.com/bazelbuild/rules_swift/releases/download/1.12.0/rules_swift.1.12.0.tar.gz",
 )
 
 # https://github.com/bazelbuild/apple_support/releases
 http_archive(
     name = "apple_support_dependencies",
-    sha256 = "2e3dc4d0000e8c2f5782ea7bb53162f37c485b5d8dc62bb3d7d7fc7c276f0d00",
-    url = "https://github.com/bazelbuild/apple_support/releases/download/1.3.2/apple_support.1.3.2.tar.gz",
+    sha256 = "62cb8c6658739d22986bbe4b025fe9f0f42cce91394096dc85d64b120ccde229",
+    url = "https://github.com/bazelbuild/apple_support/releases/download/1.10.1/apple_support.1.10.1.tar.gz",
 )
 
 # https://github.com/buildbuddy-io/rules_xcodeproj/releases
 http_archive(
     name = "com_github_buildbuddy_io_rules_xcodeproj",
-    sha256 = "2533b977ac8540a30323fde7fdb6ca49219edd21d3753b69d43f39c576b11a88",
-    url = "https://github.com/buildbuddy-io/rules_xcodeproj/releases/download/0.11.0/release.tar.gz",
+    sha256 = "d16de271048004ea27f98d6fefcb02214337920617a2678f58e8458980243a5f",
+    url = "https://github.com/MobileNativeFoundation/rules_xcodeproj/releases/download/1.12.1/release.tar.gz",
 )
 
+# https://github.com/bazelbuild/bazel-skylib/releases
 http_archive(
     name = "bazel_skylib",
-    sha256 = "74d544d96f4a5bb630d465ca8bbcfe231e3594e5aae57e1edbf17a6eb3ca2506",
-    url = "https://github.com/bazelbuild/bazel-skylib/releases/download/1.3.0/bazel-skylib-1.3.0.tar.gz",
+    sha256 = "66ffd9315665bfaafc96b52278f57c7e2dd09f5ede279ea6d39b2be471e7e3aa",
+    url = "https://github.com/bazelbuild/bazel-skylib/releases/download/1.4.2/bazel-skylib-1.4.2.tar.gz",
 )
 
 load(
@@ -55,6 +56,13 @@ load(
 )
 
 swift_rules_dependencies()
+
+load(
+    "@build_bazel_rules_swift//swift:extras.bzl",
+    "swift_rules_extra_dependencies",
+)
+
+swift_rules_extra_dependencies()
 
 load(
     "@build_bazel_apple_support//lib:repositories.bzl",
@@ -76,3 +84,10 @@ load(
 )
 
 bazel_skylib_workspace()
+
+# FIXES The repository '@bazel_features_globals' could not be resolved: Repository '@bazel_features_globals' is not defined.
+# REQUIRED by rules_xcodeproj
+
+load("@bazel_features//:deps.bzl", "bazel_features_deps")
+
+bazel_features_deps()
