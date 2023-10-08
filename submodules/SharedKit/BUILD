@@ -39,6 +39,10 @@ swift_library(
 #### MARK: swift_test
 ########################
 
+# NOTICE:
+# https://github.com/bazelbuild/rules_swift/issues/548
+# bazel test //xx/xxx ----macos_minimum_os=<your macOS version or lower>
+
 swift_test(
     name = "SwiftXCTest",
     srcs = glob([

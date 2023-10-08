@@ -112,7 +112,7 @@ $ bazel build //submodules/SharedKit:SwiftXCTest
 
 Run the `SharedKit` swift_test  
 ```
-$ bazel test //submodules/SharedKit:SwiftXCTest
+$ bazel test //submodules/SharedKit:SwiftXCTest --macos_minimum_os=13.5.2
 ```
 
 Build `OSExtension`
