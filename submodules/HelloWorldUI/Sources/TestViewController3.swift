@@ -1,5 +1,5 @@
 //
-//  TestViewController2.swift
+//  TestViewController3.swift
 //
 //  Copyright 2023 Pepe Unlimited
 //  Licensed under the MIT license, see associated LICENSE file for terms.
@@ -13,7 +13,10 @@ import SharedKit
 import UIKit
 import UIKitExtension
 
-public final class TestViewController2: UIViewController {
+// https://stackoverflow.com/questions/50766400/center-uiview-vertically-in-scroll-view-when-its-dynamic-labels-are-small-enough
+// https://sheikhamais.medium.com/ios-auto-layout-less-than-greater-than-constraints-6f73cf99dfb0
+
+public final class TestViewController3: UIViewController {
 
   // MARK: Initializer
 
@@ -32,34 +35,27 @@ public final class TestViewController2: UIViewController {
     os_log("TestViewController2.swift >> viewDidLoad", log: OSLog.viewCycle, type: .debug)
     configureView()
     configureNavigationBar()
-    let hStack = UIStackView(frame: .zero, axis: .horizontal, alignment: .center, distribution: .fill)
-    let vStack = UIStackView(frame: .zero, axis: .vertical, alignment: .center, distribution: .fill)
+    let hStack = UIStackView(frame: .zero, axis: .horizontal, alignment: .fill, distribution: .fill)
     view.addSubview(hStack)
     NSLayoutConstraint.activate([
       hStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
       hStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
       hStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-      hStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+    
     ])
-    hStack.addArrangedSubview(vStack)
-
-    let leadingVStack = UIStackView(frame: .zero, axis: .vertical, alignment: .fill, distribution: .fill)
-    let trailingVStack = UIStackView(frame: .zero, axis: .vertical, alignment: .fill, distribution: .fill)
-    hStack.insertArrangedSubview(leadingVStack, at: 0)
-    hStack.insertArrangedSubview(trailingVStack, at: 2)
 
     let primaryTextLabel = UILabel(frame: .zero, translatesAutoresizingMaskIntoConstraints: false)
-    primaryTextLabel.text = "primaryText"
-    vStack.addArrangedSubview(primaryTextLabel)
+    primaryTextLabel.text = "Test View 3"
+    hStack.addArrangedSubview(primaryTextLabel)
     // vStack.setContentHuggingPriority(.defaultLow, for: .horizontal)
-    // primaryTextLabel.textAlignment = .center
+    primaryTextLabel.textAlignment = .center
     // primaryTextLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
     
     let secondaryTextLabel = UILabel(frame: .zero, translatesAutoresizingMaskIntoConstraints: false)
     secondaryTextLabel.text = "secondaryText"
     // secondaryTextLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
     // secondaryTextLabel.textAlignment = .center
-    vStack.addArrangedSubview(secondaryTextLabel)
+    //hStack.addArrangedSubview(secondaryTextLabel)
 
     let leadingImageView: UIImageView = UIImageView(image: UIImage(named: "bazel"))
     leadingImageView.contentMode = .scaleAspectFill
@@ -70,7 +66,7 @@ public final class TestViewController2: UIViewController {
     let heightConstraint = leadingImageView.heightAnchor.constraint(equalToConstant: 48)
     heightConstraint.priority = .required
 
-    leadingVStack.addArrangedSubview(leadingImageView)
+    hStack.insertArrangedSubview(leadingImageView, at: 0)
     leadingImageView.addConstraints([widthConstraint, heightConstraint])
 
     let trailingImageView: UIImageView = UIImageView(image: UIImage(named: "bazel"))
@@ -82,9 +78,8 @@ public final class TestViewController2: UIViewController {
     let heightConstraint2 = trailingImageView.heightAnchor.constraint(equalToConstant: 24)
     heightConstraint2.priority = .required
 
-    trailingVStack.addArrangedSubview(trailingImageView)
+    // hStack.insertArrangedSubview(trailingImageView, at: 2)
     trailingImageView.addConstraints([widthConstraint2, heightConstraint2])
-
   }
 
   // MARK: viewDidLayoutSubviews
@@ -102,14 +97,14 @@ public final class TestViewController2: UIViewController {
   }
 
   func configureNavigationBar() {
-    title = "Test View 2"
+    title = "Test View 3"
   }
 
 }
 
-// MARK: TestViewController2 + ComputedProperties
+// MARK: TestViewController3 + ComputedProperties
 
-extension TestViewController2 {
+extension TestViewController3 {
 
   var backgroundColor: UIColor {
     if #available(iOS 13, *) {

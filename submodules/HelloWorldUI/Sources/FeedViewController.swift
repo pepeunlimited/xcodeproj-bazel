@@ -28,6 +28,7 @@ import UIKitExtension
 /// - [`Advances in UI Data Sources`](https://developer.apple.com/videos/play/wwdc2019/220/)
 /// - [`TryLotusMVC`](https://github.com/hlung/Lotus-MVC-example/blob/master/TryLotusMVC)
 /// - [`snips`](https://www.swiftjectivec.com/snips)
+/// - [`Dynamic Height Issue for UITableView Cells (Swift)`](https://stackoverflow.com/a/46729672)
 public final class FeedViewController: UIViewController {
 
   static let elementKindUITableCell: String = "elementKindUITableCell"

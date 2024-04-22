@@ -34,7 +34,8 @@ swift_library(
         "Sources/PageViewController.swift",
         "Sources/OnBoardingViewController.swift",
         "Sources/LoadingView.swift",
-        "Sources/TestViewController2.swift"
+        "Sources/TestViewController2.swift",
+        "Sources/TestViewController3.swift"
     ]),
     deps = [
         "//submodules/SharedKit:SharedKit",

@@ -22,7 +22,7 @@ final class MainCoordinator {
   }()
 
   func showLandingView() -> UIViewController {
-    navigationController = UINavigationController(rootViewController: pageViewController)
+    navigationController = UINavigationController(rootViewController: TestViewController3())
     return navigationController!
   }
 
