@@ -244,7 +244,7 @@ ios_application(
         ":Assets",
         ":ColorAssets"
     ],
-    minimum_os_version = "12.0",
+    minimum_os_version = "15.0",
     launch_storyboard = "LaunchScreen.storyboard",
     version = ":HelloWorldVersion",
     strings = [

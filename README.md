@@ -13,7 +13,7 @@ $ git clone --recursive https://github.com/pepeunlimited/xcodeproj-bazel.git
 
 Install bazelisk via homebrew  
 ```
-$ brew install bazelisk
+$ brew install bazel
 ```
 
 Check that you have installed and configured xcodebuild. If you're not download
@@ -92,7 +92,7 @@ $ bazel build //HelloWorld/iOS:HelloWorld
 
 Run the `iOS` application  
 ```
-$ bazel run //HelloWorld/iOS:HelloWorld
+$ bazel run //HelloWorld/iOS:HelloWorld --ios_simulator_device="iPhone 16"
 ```
 
 macOS
